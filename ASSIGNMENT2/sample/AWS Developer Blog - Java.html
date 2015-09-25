@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<!-- saved from url=(0041)http://java.awsblog.com/blog/tag/DynamoDB -->
+<html class=" js no-flexbox flexbox-legacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths" lang="en"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="stylesheet" type="text/css" href="./AWS Developer Blog - Java_files/blog-shared-min.css">
+      <!--[if lt IE 8]>
+      <link rel="stylesheet" type="text/css" href="/blogassets/cssbin/blog-shared-ie-min.css?902678707">
+      <![endif]-->
+      <link rel="stylesheet" type="text/css" href="./AWS Developer Blog - Java_files/blog-default-min.css">
+    <link rel="stylesheet" type="text/css" href="./AWS Developer Blog - Java_files/blog-awsblog-min.css">
+    <link rel="stylesheet" type="text/css" href="./AWS Developer Blog - Java_files/shCore.css">
+    <link rel="stylesheet" type="text/css" href="./AWS Developer Blog - Java_files/shThemeDefault.css">
+  <script id="twitter-wjs" src="./AWS Developer Blog - Java_files/widgets.js"></script><script type="text/javascript" src="./AWS Developer Blog - Java_files/jquery-1.6.2.min.js"></script>
+      <script type="text/javascript" src="./AWS Developer Blog - Java_files/blog-shared-ux-min.js"></script>
+      <script type="text/javascript" src="./AWS Developer Blog - Java_files/blog-default-ux-min.js"></script>
+    <script type="text/javascript" src="./AWS Developer Blog - Java_files/blog-awsblog-ux-min.js"></script>
+    <script type="text/javascript" src="./AWS Developer Blog - Java_files/shCore.js"></script>
+    <script type="text/javascript" src="./AWS Developer Blog - Java_files/shBrushBash.js"></script>
+    <script type="text/javascript" src="./AWS Developer Blog - Java_files/shBrushCSharp.js"></script>
+    <script type="text/javascript" src="./AWS Developer Blog - Java_files/shBrushJava.js"></script>
+    <script type="text/javascript" src="./AWS Developer Blog - Java_files/shBrushRuby.js"></script>
+    <script type="text/javascript" src="./AWS Developer Blog - Java_files/shBrushJScript.js"></script>
+    <script type="text/javascript" src="./AWS Developer Blog - Java_files/shBrushCpp.js"></script>
+    <script type="text/javascript" src="./AWS Developer Blog - Java_files/shBrushObjC.js"></script>
+    <script type="text/javascript" src="./AWS Developer Blog - Java_files/shBrushPhp.js"></script>
+    <script type="text/javascript" src="./AWS Developer Blog - Java_files/shBrushPlain.js"></script>
+    <script type="text/javascript" src="./AWS Developer Blog - Java_files/shBrushPython.js"></script>
+    <script type="text/javascript" src="./AWS Developer Blog - Java_files/shBrushVb.js"></script>
+    <script type="text/javascript" src="./AWS Developer Blog - Java_files/shBrushXml.js"></script>
+    <script type="text/javascript" src="./AWS Developer Blog - Java_files/shBrushSql.js"></script>
+    <script type="text/javascript">
+       blogs.url.archive = function(options) { 
+    	  var template = "/" + "blog/archive/{year}/{month}/{day}";
+          return blogs.url.template(template, options);
+       };
+    </script>
+    
+  <title>
+      AWS Developer Blog - Java</title>
+  
+    <link href="http://www.amazon.com/favicon.ico" type="image/ico" rel="icon">
+    <link href="http://www.amazon.com/favicon.ico" type="image/ico" rel="shortcut icon">
+    <link rel="alternate" type="application/rss+xml" title="Recent Posts (RSS)" href="http://java.awsblog.com/blog/feed/recentPosts.rss">
+  </head>
+  <body class="java_awsblog-theme " data-twttr-rendered="true">
+    <div id="page">
+        <div class="container">
+          <header class="clearfix">
+  <div id="defaultNavigation" class="navigation">    
+    <div>
+      <hgroup>
+        <h1>
+          <a href="http://java.awsblog.com/" id="nav-aws-logo" class="aws-sprite" title="Amazon Web Services"></a>
+        </h1>
+        <h2></h2>
+        <p class="aws-common-header-message">Java Development</p>
+      </hgroup>
+    </div>
+  </div>
+ </header><section id="content" class="clearfix">
+            <div id="main" class="span-16">
+              <div class="subheading"><h3>Showing posts tagged with DynamoDB</h3></div>
+    <ul class="blog-posts navigation nav-clearfix">
+          <li class="blog-post">
+              <article class="post display published tag-dynamodb no-comments " data-postid="Tx3RRJX73ZNOVL">
+  
+  <div class="post-heading-block clearfix">
+
+  <div class="post-author">
+      
+<div class="author avatar author-avatar blog-ui-avatar blog-ui-author-avatar" data-content-id="dyanacek">
+  <a href="http://java.awsblog.com/blog/author/David+Yanacek" title="David Yanacek"><img class="author-image" alt="David Yanacek" src="./AWS Developer Blog - Java_files/davidy_1399924930228.jpg"></a>
+</div></div>
+  <div class="post-heading">
+
+    <h1 class="post-title navigation">
+      <a href="http://java.awsblog.com/post/Tx3RRJX73ZNOVL/Using-Improved-Conditional-Writes-in-DynamoDB" rel="bookmark">
+        Using Improved Conditional Writes in DynamoDB</a>
+    </h1>
+
+    <ul class="post-attributes navigation inline-navigation blog-ui-piped">
+      <li>
+        <a href="http://java.awsblog.com/post/Tx3RRJX73ZNOVL/Using-Improved-Conditional-Writes-in-DynamoDB#" rel="bookmark">
+          <time datetime="2014-05-15T15:58:24.367Z" title="2014-05-15T15:58:24.367Z" class="post-creation-date">May 15, 2014</time></a>
+      </li>
+      <li class="last">      
+        <address class="by-line">
+          <a rel="nofollow" data-contentid="dyanacek" class="author-name" itemprop="author" href="http://java.awsblog.com/blog/author/David+Yanacek">David Yanacek</a>
+</address>
+      </li>    
+    </ul>
+    
+    <ul class="category-list post-categories navigation inline-navigation blog-ui-piped">
+  </ul><ul class="tag-list post-tags navigation inline-navigation blog-ui-piped">
+  <li class="last">
+      <span class="tag-display-link post-tags navigation inline-navigation blog-ui-piped">
+  <a href="./AWS Developer Blog - Java_files/AWS Developer Blog - Java.html" rel="tag" title="tag">DynamoDB</a></span></li>
+  </ul></div>      
+</div><div class="post-content-block">
+    <div class="post-text"><p>
+	Last month the Amazon DynamoDB team announced a new pair of features: <a href="http://aws.typepad.com/aws/2014/04/improved-queries-and-updates-for-dynamodb.html?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+AmazonWebServicesBlog+%28Amazon+Web+Services+Blog%29">Improved Query Filtering and Conditional Updates</a>.&nbsp; In this post, we'll show how to use the new and improved conditional writes feature of DynamoDB to speed up your app.</p>
+<p>
+	Let's say you're building a racing game, where two players advance in position until they reach the finish line.&nbsp; To manage the state in DynamoDB, each game could be stored in its own Item in DynamoDB, in a <span style="font-family:courier new,courier,monospace;"><u>Game</u></span> table with <span style="font-family:courier new,courier,monospace;"><u>GameId</u></span> as the primary key, and each player position stored in a different attribute.&nbsp; Here's an example of what a <span style="font-family:courier new,courier,monospace;"><u>Game</u> </span>item could look like:</p>
+<div><div id="highlighter_672592" class="syntaxhighlighter  text"><div class="toolbar"><span><a href="http://java.awsblog.com/blog/tag/DynamoDB#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="text plain">{</code></div><div class="line number2 index1 alt1"><code class="text spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="text plain">"GameId": "abc",</code></div><div class="line number3 index2 alt2"><code class="text spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="text plain">"Status": "IN_PROGRESS",</code></div><div class="line number4 index3 alt1"><code class="text spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="text plain">"Player1-Position": 0,</code></div><div class="line number5 index4 alt2"><code class="text spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="text plain">"Player2-Position": 0</code></div><div class="line number6 index5 alt1"><code class="text plain">}</code></div></div></td></tr></tbody></table></div></div>
+<p>
+	To make players move, you can use the <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html#WorkingWithItems.AtomicCounters">atomic counters</a> feature of DynamoDB in the <a href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateItem.html">UpdateItem</a> API to send requests like, “increase the player position by 1, regardless of its current value”.&nbsp; To prevent players from advancing before the game starts, you can use <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html#WorkingWithItems.ConditionalUpdate">conditional writes</a> to make the same request as before, but only “as long as the game status is IN_PROGRESS.”&nbsp; Conditional writes are a way of instructing DynamoDB to perform a given write request only if certain attribute values in the item match what you expect them to be at the time of the request.</p>
+<p>
+	But this isn't the whole story.&nbsp; How do you determine the winner of the game, and prevent players from moving once the game is over?&nbsp; In other words, we need a way to atomically make it so that all players stop once one reaches the end of the race (no ties allowed!).</p>
+<p>
+	This is where the new improved conditional writes come in handy.&nbsp; Before, the conditional writes feature supported tests for equality (attribute “x” equals “20”).&nbsp; With improved conditions, DynamoDB supports tests for <em>in</em>equality (attribute “x” is <em>less than</em> “20”).&nbsp; This is useful for the game application, because now the request can be, “increase the player position by 1 as long as the status of the game equals IN_PROGRESS, <em>and the positions of player 1 and player 2 are less than 20.</em>”&nbsp; During player movement, one player will eventually reach the finish line first, and any future moves after that will be blocked by the conditional writes.&nbsp; Here's the code:</p>
+<div><div id="highlighter_51821" class="syntaxhighlighter nogutter  java"><div class="toolbar"><span><a href="http://java.awsblog.com/blog/tag/DynamoDB#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">public</code> <code class="java keyword">static</code> <code class="java keyword">void</code> <code class="java plain">main(String[] args) {</code></div><div class="line number2 index1 alt1">&nbsp;</div><div class="line number3 index2 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java comments">// To run this example, first initialize the client, and create a table</code></div><div class="line number4 index3 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java comments">// named 'Game' with a primary key of type hash / string called 'GameId'.</code></div><div class="line number5 index4 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>&nbsp;</div><div class="line number6 index5 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">AmazonDynamoDB dynamodb; </code><code class="java comments">// initialize the client</code></div><div class="line number7 index6 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>&nbsp;</div><div class="line number8 index7 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">try</code> <code class="java plain">{</code></div><div class="line number9 index8 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java comments">// First set up the example by inserting a new item</code></div><div class="line number10 index9 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>&nbsp;</div><div class="line number11 index10 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java comments">// To see different results, change either player's</code></div><div class="line number12 index11 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java comments">// starting positions to 20, or set player 1's location to 19.</code></div><div class="line number13 index12 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">Integer player1Position = </code><code class="java value">15</code><code class="java plain">;</code></div><div class="line number14 index13 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">Integer player2Position = </code><code class="java value">12</code><code class="java plain">;</code></div><div class="line number15 index14 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">dynamodb.putItem(</code><code class="java keyword">new</code> <code class="java plain">PutItemRequest()</code></div><div class="line number16 index15 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">.withTableName(</code><code class="java string">"Game"</code><code class="java plain">)</code></div><div class="line number17 index16 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">.addItemEntry(</code><code class="java string">"GameId"</code><code class="java plain">, </code><code class="java keyword">new</code> <code class="java plain">AttributeValue(</code><code class="java string">"abc"</code><code class="java plain">))</code></div><div class="line number18 index17 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">.addItemEntry(</code><code class="java string">"Player1-Position"</code><code class="java plain">,</code></div><div class="line number19 index18 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">new</code> <code class="java plain">AttributeValue().withN(player1Position.toString()))</code></div><div class="line number20 index19 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">.addItemEntry(</code><code class="java string">"Player2-Position"</code><code class="java plain">,</code></div><div class="line number21 index20 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">new</code> <code class="java plain">AttributeValue().withN(player2Position.toString()))</code></div><div class="line number22 index21 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">.addItemEntry(</code><code class="java string">"Status"</code><code class="java plain">, </code><code class="java keyword">new</code> <code class="java plain">AttributeValue(</code><code class="java string">"IN_PROGRESS"</code><code class="java plain">)));</code></div><div class="line number23 index22 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>&nbsp;</div><div class="line number24 index23 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java comments">// Now move Player1 for game "abc" by 1,</code></div><div class="line number25 index24 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java comments">// as long as neither player has reached "20".</code></div><div class="line number26 index25 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">UpdateItemResult result = dynamodb.updateItem(</code><code class="java keyword">new</code> <code class="java plain">UpdateItemRequest()</code></div><div class="line number27 index26 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">.withTableName(</code><code class="java string">"Game"</code><code class="java plain">)</code></div><div class="line number28 index27 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">.withReturnValues(ReturnValue.ALL_NEW)</code></div><div class="line number29 index28 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">.addKeyEntry(</code><code class="java string">"GameId"</code><code class="java plain">, </code><code class="java keyword">new</code> <code class="java plain">AttributeValue(</code><code class="java string">"abc"</code><code class="java plain">))</code></div><div class="line number30 index29 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">.addAttributeUpdatesEntry(</code></div><div class="line number31 index30 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java string">"Player1-Position"</code><code class="java plain">, </code><code class="java keyword">new</code> <code class="java plain">AttributeValueUpdate()</code></div><div class="line number32 index31 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">.withValue(</code><code class="java keyword">new</code> <code class="java plain">AttributeValue().withN(</code><code class="java string">"1"</code><code class="java plain">))</code></div><div class="line number33 index32 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">.withAction(AttributeAction.ADD))</code></div><div class="line number34 index33 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">.addExpectedEntry(</code></div><div class="line number35 index34 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java string">"Player1-Position"</code><code class="java plain">, </code><code class="java keyword">new</code> <code class="java plain">ExpectedAttributeValue()</code></div><div class="line number36 index35 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">.withValue(</code><code class="java keyword">new</code> <code class="java plain">AttributeValue().withN(</code><code class="java string">"20"</code><code class="java plain">))</code></div><div class="line number37 index36 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">.withComparisonOperator(ComparisonOperator.LT))</code></div><div class="line number38 index37 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">.addExpectedEntry(</code></div><div class="line number39 index38 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java string">"Player2-Position"</code><code class="java plain">, </code><code class="java keyword">new</code> <code class="java plain">ExpectedAttributeValue()</code></div><div class="line number40 index39 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">.withValue(</code><code class="java keyword">new</code> <code class="java plain">AttributeValue().withN(</code><code class="java string">"20"</code><code class="java plain">))</code></div><div class="line number41 index40 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">.withComparisonOperator(ComparisonOperator.LT))</code></div><div class="line number42 index41 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">.addExpectedEntry(</code></div><div class="line number43 index42 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java string">"Status"</code><code class="java plain">, </code><code class="java keyword">new</code> <code class="java plain">ExpectedAttributeValue()</code></div><div class="line number44 index43 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">.withValue(</code><code class="java keyword">new</code> <code class="java plain">AttributeValue().withS(</code><code class="java string">"IN_PROGRESS"</code><code class="java plain">))</code></div><div class="line number45 index44 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">.withComparisonOperator(ComparisonOperator.EQ))</code></div><div class="line number46 index45 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>&nbsp;</div><div class="line number47 index46 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">);</code></div><div class="line number48 index47 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">if</code> <code class="java plain">(</code><code class="java string">"20"</code><code class="java plain">.equals(result.getAttributes().get(</code><code class="java string">"Player1-Position"</code><code class="java plain">).getN())) {</code></div><div class="line number49 index48 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">System.out.println(</code><code class="java string">"Player 1 wins!"</code><code class="java plain">);</code></div><div class="line number50 index49 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">} </code><code class="java keyword">else</code> <code class="java plain">{</code></div><div class="line number51 index50 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">System.out.println(</code><code class="java string">"The game is still in progress: "</code></div><div class="line number52 index51 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">+ result.getAttributes());</code></div><div class="line number53 index52 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">}</code></div><div class="line number54 index53 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">} </code><code class="java keyword">catch</code> <code class="java plain">(ConditionalCheckFailedException e) {</code></div><div class="line number55 index54 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">System.out.println(</code><code class="java string">"Failed to move player 1 because the game is over"</code><code class="java plain">);</code></div><div class="line number56 index55 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">}</code></div><div class="line number57 index56 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">}</code></div></div></td></tr></tbody></table></div></div>
+<p>
+	With this algorithm, player movement now takes only one write operation to DynamoDB.&nbsp; What would it have taken without improved conditions?&nbsp; Using only equality conditions, the app would have needed to follow the read-modify-write pattern:</p>
+<ol>
+	<li>
+		Read each item, making note of each player's position, and verify that neither player already reached the end of the race.</li>
+	<li>
+		Advance the player's position by 1, with a condition that both players were still in the position we read in step 1).</li>
+</ol>
+<p>
+	Notice that this algorithm requires two round-trips to DynamoDB, whereas with improved conditions, it can be done in only one round-trip.&nbsp; This reduces both latency and cost.</p>
+<p>
+	You can find more information about conditional writes in Amazon DynamoDB in the <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html#WorkingWithItems.ConditionalUpdate">Developer Guide</a>.</p></div>
+  </div>
+
+  <div class="post-footer-block">
+  <div class="fl-r">
+    <ul class="share-buttons navigation inline-navigation">
+      <li class="quiet">
+        Share</li>
+      <li>
+        <span class="social-media email share-post">
+<a href="http://java.awsblog.com/blog/amazon/signin?continueURL=/blog/email/share%3FpostID=Tx3RRJX73ZNOVL" class="share-url icon email-icon" onclick="window.open(&#39;/blog/amazon/signin?continueURL=/blog/email/share%3FpostID=Tx3RRJX73ZNOVL&#39;, &#39;_blank&#39;, &#39;location=yes,width=700,height=600&#39;);return false;" title="Share via Email"></a>
+</span>
+</li>
+      <li>            
+        <span class="social-media facebook share-post">
+<a href="https://www.facebook.com/share.php?u=http%3A%2F%2Fjava.awsblog.com%2Fpost%2FTx3RRJX73ZNOVL%2FUsing-Improved-Conditional-Writes-in-DynamoDB&t=Using%20Improved%20Conditional%20Writes%20in%20DynamoDB" class="share-url icon facebook-icon" onclick="window.open(&#39;https://www.facebook.com/share.php?u=http%3A%2F%2Fjava.awsblog.com%2Fpost%2FTx3RRJX73ZNOVL%2FUsing-Improved-Conditional-Writes-in-DynamoDB&amp;t=Using%20Improved%20Conditional%20Writes%20in%20DynamoDB&#39;, &#39;_blank&#39;, &#39;location=yes,width=700,height=400&#39;);return false;" title="Share on Facebook"></a>
+</span>
+</li>
+      <li>
+        <span class="social-media twitter share-post">
+<a href="https://twitter.com/share?url=http%3A%2F%2Fjava.awsblog.com%2Fpost%2FTx3RRJX73ZNOVL%2FUsing-Improved-Conditional-Writes-in-DynamoDB&via=awsforjava&text=Using+Improved+Conditional+Writes+in+DynamoDB&count=none" class="share-url icon twitter-icon" onclick="window.open(&#39;https://twitter.com/share?url=http%3A%2F%2Fjava.awsblog.com%2Fpost%2FTx3RRJX73ZNOVL%2FUsing-Improved-Conditional-Writes-in-DynamoDB&amp;via=awsforjava&amp;text=Using+Improved+Conditional+Writes+in+DynamoDB&amp;count=none&#39;, &#39;_blank&#39;, &#39;location=yes,width=700,height=400&#39;);return false;" title="Share on Twitter"></a>
+</span></li>
+      </ul>
+  </div>
+<div>
+  <ul class="post-attributes navigation inline-navigation blog-ui-piped push-bottom-1">
+    <li>
+      <a href="http://java.awsblog.com/post/Tx3RRJX73ZNOVL/Using-Improved-Conditional-Writes-in-DynamoDB#" rel="bookmark">
+        <time datetime="2014-05-15T15:58:24.367Z" title="2014-05-15T15:58:24.367Z" class="post-creation-date">May 15, 2014</time></a>
+    </li>
+    <li>
+          <a href="http://java.awsblog.com/post/Tx3RRJX73ZNOVL/Using-Improved-Conditional-Writes-in-DynamoDB#" rel="bookmark">Permalink</a>
+        </li>
+    <li>
+          <a href="http://java.awsblog.com/post/Tx3RRJX73ZNOVL/Using-Improved-Conditional-Writes-in-DynamoDB#postCommentsTx3RRJX73ZNOVL">Comments (<span id="commentNumber">0</span>)</a>
+        </li>
+    </ul>
+</div></div></article>
+</li>
+          <li class="blog-post">
+              <article class="post display published tag-dynamodb tag-transaction has-comments " data-postid="Tx13H2W58QMAOA7">
+  
+  <div class="post-heading-block clearfix">
+
+  <div class="post-author">
+      
+<div class="author avatar author-avatar blog-ui-avatar blog-ui-author-avatar" data-content-id="wademat">
+  <a href="http://java.awsblog.com/blog/author/Wade+Matveyenko" title="Wade Matveyenko"><img class="author-image" alt="Wade Matveyenko" src="./AWS Developer Blog - Java_files/wademat_50x50.jpg"></a>
+</div></div>
+  <div class="post-heading">
+
+    <h1 class="post-title navigation">
+      <a href="http://java.awsblog.com/post/Tx13H2W58QMAOA7/Performing-Conditional-Writes-Using-the-Amazon-DynamoDB-Transaction-Library" rel="bookmark">
+        Performing Conditional Writes Using the Amazon DynamoDB Transaction Library</a>
+    </h1>
+
+    <ul class="post-attributes navigation inline-navigation blog-ui-piped">
+      <li>
+        <a href="http://java.awsblog.com/post/Tx13H2W58QMAOA7/Performing-Conditional-Writes-Using-the-Amazon-DynamoDB-Transaction-Library#" rel="bookmark">
+          <time datetime="2014-02-05T21:15:50.108Z" title="2014-02-05T21:15:50.108Z" class="post-creation-date">February 5, 2014</time></a>
+      </li>
+      <li class="last">      
+        <address class="by-line">
+          <a rel="nofollow" data-contentid="wademat" class="author-name" itemprop="author" href="http://java.awsblog.com/blog/author/Wade+Matveyenko">Wade Matveyenko</a>
+</address>
+      </li>    
+    </ul>
+    
+    <ul class="category-list post-categories navigation inline-navigation blog-ui-piped">
+  </ul><ul class="tag-list post-tags navigation inline-navigation blog-ui-piped">
+  <li class="">
+      <span class="tag-display-link post-tags navigation inline-navigation blog-ui-piped">
+  <a href="./AWS Developer Blog - Java_files/AWS Developer Blog - Java.html" rel="tag" title="tag">DynamoDB</a></span></li>
+  <li class="last">
+      <span class="tag-display-link post-tags navigation inline-navigation blog-ui-piped">
+  <a href="http://java.awsblog.com/blog/tag/Transaction" rel="tag" title="tag">Transaction</a></span></li>
+  </ul></div>      
+</div><div class="post-content-block">
+    <div class="post-text"><p>
+	Today we're lucky to have another guest post by <a href="http://www.linkedin.com/pub/david-yanacek/2/736/592">David Yanacek</a> from the Amazon DynamoDB team. David is sharing his deep knowledge on<strong> </strong>the<strong> Amazon DynamoDB Transactions</strong> library to help explain how to use it with the conditional writes feature of Amazon DynamoDB.</p>
+<hr>
+<p>
+	The DynamoDB transaction library provides a convenient way to perform atomic reads and writes across multiple DynamoDB items and tables. The library does all of the nuanced item locking, commits, applies, and rollbacks for you, so that you don't have to worry about building your own state machines or other schemes to make sure that writes eventually happen across multiple items. In this post, we demonstrate how to use the read-modify-write pattern with the transaction library to accomplish the same atomic checks you were used to getting by using <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html#WorkingWithItemsConditionalUpdate">conditional writes</a> with the vanilla DynamoDB API.</p>
+<p>
+	The transaction library exposes as much of the <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/operationlist.html">low-level Java API</a> as possible, but it does not support conditional writes out of the box. Conditional writes are a way of asking DynamoDB to perform a write operation like <code>PutItem</code>, <code>UpdateItem</code>, or <code>DeleteItem</code>, but only if certain attributes of the item still have the values that you expect, right before the write goes through. Instead of exposing conditional writes directly, the transaction library enables the read-modify-write pattern—just like the pattern you’re used to with transactions in an RDBMS. The idea is to start a transaction, read items using that transaction, validate that those items contain the values you expect to start with, write your changes using that same transaction, and then commit the transaction. &nbsp;If the commit() call succeeds, it means that the changes were written atomically, and none of the items in the transaction were modified by any other transaction in the meantime, starting from the time when each item was read by your transaction.</p>
+<h2>
+	Transaction library recap</h2>
+<p>
+	Let's say you're implementing a tic-tac-toe game. You have an Item in a DynamoDB table representing a single match of the game, with an attribute for each position in the board (Top-Left, Bottom-Right, etc.). Also, to make this into a multi-item transaction, let's add two more items—one per player in the game, each with an attribute saying whether it is currently that player's turn or not. The items might look something like this:</p>
+<table border="1" cellpadding="0" cellspacing="0">
+	<tbody>
+		<tr>
+			<td style="width:213px;">
+				<strong>Games Table Item</strong></td>
+			<td colspan="2" style="width:426px;">
+				<strong>Users Table Items</strong></td>
+		</tr>
+		<tr>
+			<td style="width:213px;">
+				<div>
+					{</div>
+				<div>
+					&nbsp; "<u>GameId</u>": "cf3df",</div>
+				<div>
+					&nbsp; "Turn": "Bob",</div>
+				<div>
+					&nbsp; "Top-Right": "O"</div>
+				<div>
+					}</div>
+			</td>
+			<td style="width:213px;">
+				<div>
+					{</div>
+				<div>
+					&nbsp; "<u>UserId</u>": "Alice",</div>
+				<div>
+					&nbsp; "IsMyTurn": 0</div>
+				<div>
+					}</div>
+			</td>
+			<td style="width:213px;">
+				<div>
+					{</div>
+				<div>
+					&nbsp; "<u>UserId</u>": "Bob",</div>
+				<div>
+					&nbsp; "IsMyTurn": 1</div>
+				<div>
+					}</div>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<p>
+	Now when Bob plays his turn in the game, all three items need to be updated:</p>
+<ol>
+	<li>
+		The Bob record needs to be marked as "Not my turn anymore."</li>
+	<li>
+		The Alice record needs to be marked as "It's my turn now."</li>
+	<li>
+		The Game record needs to be marked as "It's Alice's turn, and also the Top-Left has an X in it."</li>
+</ol>
+<p>
+	If you write your application so that it performs three <code>UpdateItem</code> operations in a row, a few problems could occur. For example, your application could crash after doing one of the writes, and now something else in your application would need to notice this and pick up where it left off before doing anything else in the game. Fortunately, the transaction library can make these three separate operations happen together in a transaction, where either all of the writes go through together, or if there is another transaction overlapping with yours at the same time, only one of those transactions happens.</p>
+<p>
+	The code for doing this in a transaction looks like this:</p>
+<div><div id="highlighter_73336" class="syntaxhighlighter nogutter  java"><div class="toolbar"><span><a href="http://java.awsblog.com/blog/tag/DynamoDB#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="java comments">// Start a new transaction</code></div><div class="line number2 index1 alt1"><code class="java plain">Transaction t = txManager.newTransaction();</code></div><div class="line number3 index2 alt2"><code class="java spaces">&nbsp;</code>&nbsp;</div><div class="line number4 index3 alt1"><code class="java comments">// Update Alice's record to let him know that it is now her turn.</code></div><div class="line number5 index4 alt2"><code class="java plain">t.updateItem(</code></div><div class="line number6 index5 alt1"><code class="java spaces">&nbsp;&nbsp;</code><code class="java keyword">new</code> <code class="java plain">UpdateItemRequest()</code></div><div class="line number7 index6 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">.withTableName(</code><code class="java string">"Users"</code><code class="java plain">)</code></div><div class="line number8 index7 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">.addKeyEntry(</code><code class="java string">"UserId"</code><code class="java plain">, </code><code class="java keyword">new</code> <code class="java plain">AttributeValue(</code><code class="java string">"Alice"</code><code class="java plain">))</code></div><div class="line number9 index8 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">.addAttributeUpdatesEntry(</code><code class="java string">"IsMyTurn"</code><code class="java plain">,</code></div><div class="line number10 index9 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">new</code> <code class="java plain">AttributeValueUpdate(</code><code class="java keyword">new</code> <code class="java plain">AttributeValue(</code><code class="java string">"1"</code><code class="java plain">), AttributeAction.PUT)));</code></div><div class="line number11 index10 alt2"><code class="java spaces">&nbsp;</code>&nbsp;</div><div class="line number12 index11 alt1"><code class="java comments">// Update Bob's record to let him know that it is not his turn anymore.</code></div><div class="line number13 index12 alt2"><code class="java plain">t.updateItem(</code></div><div class="line number14 index13 alt1"><code class="java spaces">&nbsp;&nbsp;</code><code class="java keyword">new</code> <code class="java plain">UpdateItemRequest()</code></div><div class="line number15 index14 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">.withTableName(</code><code class="java string">"Users"</code><code class="java plain">)</code></div><div class="line number16 index15 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">.addKeyEntry(</code><code class="java string">"UserId"</code><code class="java plain">, </code><code class="java keyword">new</code> <code class="java plain">AttributeValue(</code><code class="java string">"Bob"</code><code class="java plain">))</code></div><div class="line number17 index16 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">.addAttributeUpdatesEntry(</code><code class="java string">"IsMyTurn"</code><code class="java plain">,</code></div><div class="line number18 index17 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">new</code> <code class="java plain">AttributeValueUpdate(</code><code class="java keyword">new</code> <code class="java plain">AttributeValue(</code><code class="java string">"0"</code><code class="java plain">), AttributeAction.PUT)));</code></div><div class="line number19 index18 alt2"><code class="java spaces">&nbsp;</code>&nbsp;</div><div class="line number20 index19 alt1"><code class="java comments">// Update the Game item to mark the spot that was played, and make it Alice's turn now.</code></div><div class="line number21 index20 alt2"><code class="java plain">t.updateItem(</code></div><div class="line number22 index21 alt1"><code class="java spaces">&nbsp;&nbsp;</code><code class="java keyword">new</code> <code class="java plain">UpdateItemRequest()</code></div><div class="line number23 index22 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">.withTableName(</code><code class="java string">"Games"</code><code class="java plain">)</code></div><div class="line number24 index23 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">.addKeyEntry(</code><code class="java string">"GameId"</code><code class="java plain">, </code><code class="java keyword">new</code> <code class="java plain">AttributeValue(</code><code class="java string">"cf3df"</code><code class="java plain">))</code></div><div class="line number25 index24 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">.addAttributeUpdatesEntry(</code><code class="java string">"Top-Left"</code><code class="java plain">, </code></div><div class="line number26 index25 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">new</code> <code class="java plain">AttributeValueUpdate(</code><code class="java keyword">new</code> <code class="java plain">AttributeValue(</code><code class="java string">"X"</code><code class="java plain">), AttributeAction.PUT))</code></div><div class="line number27 index26 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">.addAttributeUpdatesEntry(</code><code class="java string">"Turn"</code><code class="java plain">,</code></div><div class="line number28 index27 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">new</code> <code class="java plain">AttributeValueUpdate(</code><code class="java keyword">new</code> <code class="java plain">AttributeValue(</code><code class="java string">"Alice"</code><code class="java plain">), AttributeAction.PUT)));</code></div><div class="line number29 index28 alt2"><code class="java spaces">&nbsp;</code>&nbsp;</div><div class="line number30 index29 alt1"><code class="java comments">// If no exceptions are thrown by this line, it means that the transaction was committed.</code></div><div class="line number31 index30 alt2"><code class="java plain">t.commit();</code></div></div></td></tr></tbody></table></div></div>
+<h2>
+	What about conditional writes?</h2>
+<p>
+	The preceding code makes sure that the writes go through atomically, but that's not enough logic for making a move in the game. We need to make sure that, when the transaction goes through, there wasn't a transaction right before it where Bob already played his turn. In other words, how do we make sure that Bob doesn't play twice in a row—for example, by trying to sneak in two turns before Alice has a chance to move? If there was only a single item involved, say the "Games" item, we could accomplish this by using conditional writes (the Expected clause), like so:</p>
+<div><div id="highlighter_41886" class="syntaxhighlighter nogutter  java"><div class="toolbar"><span><a href="http://java.awsblog.com/blog/tag/DynamoDB#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="java comments">// An example of a conditional update using the DynamoDB client (not the transaction library)</code></div><div class="line number2 index1 alt1"><code class="java plain">dynamodb.updateItem(</code></div><div class="line number3 index2 alt2"><code class="java spaces">&nbsp;&nbsp;</code><code class="java keyword">new</code> <code class="java plain">UpdateItemRequest()</code></div><div class="line number4 index3 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">.withTableName(</code><code class="java string">"Games"</code><code class="java plain">)</code></div><div class="line number5 index4 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">.addKeyEntry(</code><code class="java string">"GameId"</code><code class="java plain">, </code><code class="java keyword">new</code> <code class="java plain">AttributeValue(</code><code class="java string">"cf3df"</code><code class="java plain">))</code></div><div class="line number6 index5 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">.addAttributeUpdatesEntry(</code><code class="java string">"Top-Left"</code><code class="java plain">, </code></div><div class="line number7 index6 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">new</code> <code class="java plain">AttributeValueUpdate(</code><code class="java keyword">new</code> <code class="java plain">AttributeValue(</code><code class="java string">"X"</code><code class="java plain">), AttributeAction.PUT))</code></div><div class="line number8 index7 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">.addAttributeUpdatesEntry(</code><code class="java string">"Turn"</code><code class="java plain">,</code></div><div class="line number9 index8 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">new</code> <code class="java plain">AttributeValueUpdate(</code><code class="java keyword">new</code> <code class="java plain">AttributeValue(</code><code class="java string">"Alice"</code><code class="java plain">), AttributeAction.PUT))</code></div><div class="line number10 index9 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">.addExpectedEntry(</code><code class="java string">"Turn"</code><code class="java plain">, </code><code class="java keyword">new</code> <code class="java plain">ExpectedAttributeValue(</code><code class="java keyword">new</code> <code class="java plain">AttributeValue(</code><code class="java string">"Bob"</code><code class="java plain">))) </code><code class="java comments">// A condition to ensure it's still Bob's turn</code></div><div class="line number11 index10 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">.addExpectedEntry(</code><code class="java string">"Top-Left"</code><code class="java plain">, </code><code class="java keyword">new</code> <code class="java plain">ExpectedAttributeValue(</code><code class="java keyword">false</code><code class="java plain">)));&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><code class="java comments">// A condition to ensure the Top-Left hasn't been played</code></div></div></td></tr></tbody></table></div></div>
+<p>
+	This code now correctly updates the single Game item. However, conditional writes in DynamoDB can only refer to the single item the operation is updating, and our transaction contains three items that need to be updated together, only if the Game is still in the right state. Therefore, we need some way of mixing the original transaction code with these “conditional check” semantics.</p>
+<h2>
+	Conditional writes with the transaction library</h2>
+<p>
+	We started off with code for a transaction that coordinated the writes to all three items atomically, but it didn't ensure that it was still Bob's turn when it played Bob's move. Fortunately, adding that check is easy: it’s simply a matter of adding a read to the transaction, and then performing the verification on the client-side. This is sometimes referred to as a "read-modify-write" pattern:</p>
+<div><div id="highlighter_391927" class="syntaxhighlighter nogutter  java"><div class="toolbar"><span><a href="http://java.awsblog.com/blog/tag/DynamoDB#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="java comments">// Start a new transaction, just like before.</code></div><div class="line number2 index1 alt1"><code class="java plain">Transaction t = txManager.newTransaction();</code></div><div class="line number3 index2 alt2"><code class="java spaces">&nbsp;</code>&nbsp;</div><div class="line number4 index3 alt1"><code class="java comments">// First, read the Game item.</code></div><div class="line number5 index4 alt2"><code class="java plain">Map game = t.getItem(</code></div><div class="line number6 index5 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">new</code> <code class="java plain">GetItemRequest()</code></div><div class="line number7 index6 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">.withTableName(</code><code class="java string">"Games"</code><code class="java plain">)</code></div><div class="line number8 index7 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">.addKeyEntry(</code><code class="java string">"GameId"</code><code class="java plain">, </code><code class="java keyword">new</code> <code class="java plain">AttributeValue(</code><code class="java string">"cf3df"</code><code class="java plain">))).getItem();</code></div><div class="line number9 index8 alt2"><code class="java spaces">&nbsp;</code>&nbsp;</div><div class="line number10 index9 alt1"><code class="java comments">// Now check the Game item to ensure it's in the state you expect, and bail out if it's not.</code></div><div class="line number11 index10 alt2"><code class="java comments">// These checks serve as the "expected" clause.&nbsp; </code></div><div class="line number12 index11 alt1"><code class="java keyword">if</code> <code class="java plain">(! </code><code class="java string">"Bob"</code><code class="java plain">.equals(game.get(</code><code class="java string">"Turn"</code><code class="java plain">).getS())) {</code></div><div class="line number13 index12 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">t.rollback();</code></div><div class="line number14 index13 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">throw</code> <code class="java keyword">new</code> <code class="java plain">ConditionalCheckFailedException(</code><code class="java string">"Bob can only play when it's Bob's turn!"</code><code class="java plain">);</code></div><div class="line number15 index14 alt2"><code class="java plain">}</code></div><div class="line number16 index15 alt1"><code class="java spaces">&nbsp;</code>&nbsp;</div><div class="line number17 index16 alt2"><code class="java keyword">if</code> <code class="java plain">(game.containsKey(</code><code class="java string">"Top-Left"</code><code class="java plain">)) {</code></div><div class="line number18 index17 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">t.rollback();</code></div><div class="line number19 index18 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">throw</code> <code class="java keyword">new</code> <code class="java plain">ConditionalCheckFailedException(</code><code class="java string">"Bob cannot play in the Top-Left because it has already been played."</code><code class="java plain">);</code></div><div class="line number20 index19 alt1"><code class="java plain">}</code></div><div class="line number21 index20 alt2"><code class="java spaces">&nbsp;</code>&nbsp;</div><div class="line number22 index21 alt1"><code class="java comments">// Again, update Alice's record to let her know that it is now her turn.</code></div><div class="line number23 index22 alt2"><code class="java plain">t.updateItem(</code></div><div class="line number24 index23 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">new</code> <code class="java plain">UpdateItemRequest()</code></div><div class="line number25 index24 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">.withTableName(</code><code class="java string">"Users"</code><code class="java plain">)</code></div><div class="line number26 index25 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">.addKeyEntry(</code><code class="java string">"UserId"</code><code class="java plain">, </code><code class="java keyword">new</code> <code class="java plain">AttributeValue(</code><code class="java string">"Alice"</code><code class="java plain">))</code></div><div class="line number27 index26 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">.addAttributeUpdatesEntry(</code><code class="java string">"IsMyTurn"</code><code class="java plain">,</code></div><div class="line number28 index27 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">new</code> <code class="java plain">AttributeValueUpdate(</code><code class="java keyword">new</code> <code class="java plain">AttributeValue(</code><code class="java string">"1"</code><code class="java plain">), AttributeAction.PUT)));</code></div><div class="line number29 index28 alt2"><code class="java spaces">&nbsp;</code>&nbsp;</div><div class="line number30 index29 alt1"><code class="java comments">// And again, update Bob's record to let him know that it is not his turn anymore.</code></div><div class="line number31 index30 alt2"><code class="java plain">t.updateItem(</code></div><div class="line number32 index31 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">new</code> <code class="java plain">UpdateItemRequest()</code></div><div class="line number33 index32 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">.withTableName(</code><code class="java string">"Users"</code><code class="java plain">)</code></div><div class="line number34 index33 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">.addKeyEntry(</code><code class="java string">"UserId"</code><code class="java plain">, </code><code class="java keyword">new</code> <code class="java plain">AttributeValue(</code><code class="java string">"Bob"</code><code class="java plain">))</code></div><div class="line number35 index34 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">.addAttributeUpdatesEntry(</code><code class="java string">"IsMyTurn"</code><code class="java plain">,</code></div><div class="line number36 index35 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">new</code> <code class="java plain">AttributeValueUpdate(</code><code class="java keyword">new</code> <code class="java plain">AttributeValue(</code><code class="java string">"0"</code><code class="java plain">), AttributeAction.PUT)));</code></div><div class="line number37 index36 alt2"><code class="java spaces">&nbsp;</code>&nbsp;</div><div class="line number38 index37 alt1"><code class="java comments">// Finally, update the Game item to mark the spot that was played and make it Alice's turn now.</code></div><div class="line number39 index38 alt2"><code class="java plain">t.updateItem(</code></div><div class="line number40 index39 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">new</code> <code class="java plain">UpdateItemRequest()</code></div><div class="line number41 index40 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">.withTableName(</code><code class="java string">"Games"</code><code class="java plain">)</code></div><div class="line number42 index41 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">.addKeyEntry(</code><code class="java string">"GameId"</code><code class="java plain">, </code><code class="java keyword">new</code> <code class="java plain">AttributeValue(</code><code class="java string">"cf3df"</code><code class="java plain">))</code></div><div class="line number43 index42 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">.addAttributeUpdatesEntry(</code><code class="java string">"Top-Left"</code><code class="java plain">, </code></div><div class="line number44 index43 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">new</code> <code class="java plain">AttributeValueUpdate(</code><code class="java keyword">new</code> <code class="java plain">AttributeValue(</code><code class="java string">"X"</code><code class="java plain">), AttributeAction.PUT))</code></div><div class="line number45 index44 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">.addAttributeUpdatesEntry(</code><code class="java string">"Turn"</code><code class="java plain">,</code></div><div class="line number46 index45 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">new</code> <code class="java plain">AttributeValueUpdate(</code><code class="java keyword">new</code> <code class="java plain">AttributeValue(</code><code class="java string">"Alice"</code><code class="java plain">), AttributeAction.PUT)));</code></div><div class="line number47 index46 alt2"><code class="java spaces">&nbsp;</code>&nbsp;</div><div class="line number48 index47 alt1"><code class="java comments">// If no exceptions are thrown by this line, it means that the transaction was committed without interference from any other transactions.</code></div><div class="line number49 index48 alt2"><code class="java keyword">try</code> <code class="java plain">{</code></div><div class="line number50 index49 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">t.commit();</code></div><div class="line number51 index50 alt2"><code class="java plain">} </code><code class="java keyword">catch</code> <code class="java plain">(TransactionRolledBackException e) {</code></div><div class="line number52 index51 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java comments">// If any of the items in the transaction were changed or read in the meantime by a different transaction, then this will be thrown.</code></div><div class="line number53 index52 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">throw</code> <code class="java keyword">new</code> <code class="java plain">RuntimeException(</code><code class="java string">"The game was changed while this transaction was happening. You probably want to refresh Bob's view of the game."</code><code class="java plain">, e);</code></div><div class="line number54 index53 alt1"><code class="java plain">}</code></div></div></td></tr></tbody></table></div></div>
+<p>
+	There are two main differences with the first approach.</p>
+<ul>
+	<li>
+		First, the code calls <code>GetItem</code> on the transaction and checks to make sure the item is in the state your application expects it to be in. If not, it rolls back the transaction and returns an error to the caller. This is done in the same transaction as the subsequent updates. When you read an item in a transaction, the transaction library locks the item in the same way as when you modify it in the transaction. Your application can still read an item without interfering with it while it is locked, but it must do so outside of a transaction, using one of the read isolation levels on the TransactionManager. More about read isolation levels is available in the <a href="https://github.com/awslabs/dynamodb-transactions/blob/master/DESIGN.md">design document</a> for the transaction library.</li>
+	<li>
+		Next, the code checks for <code>TransactionRolledBackException</code>. This check could have been done in the first example as well, but it's called out in this example to show what will happen if another transaction either reads or writes any of the items involved in the transaction while yours was going on. When this happens, you might want to retry the whole transaction (start from the beginning—don't skip any steps), or refresh your client's view so that they can re-evaluate their move, since the state of the game may have changed.</li>
+</ul>
+<p>
+	While the preceding code doesn’t literally use the conditional writes API in DynamoDB (through the <code>Expected</code> parameter), it functionally does the same atomic validation—except with the added capability of performing that check and write atomically across multiple items.</p>
+<h2>
+	More info</h2>
+<p>
+	You can find the DynamoDB transaction library in the <a href="https://github.com/awslabs/dynamodb-transactions">AWS Labs repository on GitHub</a>. You’ll also find a <a href="https://github.com/awslabs/dynamodb-transactions/blob/master/DESIGN.md">more detailed write-up</a> describing the algorithms it uses. You can find more usage information about the transaction library in <a href="http://aws.typepad.com/aws/2013/07/dynamodb-transaction-library.html">the blog post</a> that announced the library. And if you want to see some working code that uses transactions, check out <a href="https://github.com/awslabs/dynamodb-transactions/blob/master/examples/src/main/java/com/amazonaws/services/dynamodbv2/transactions/examples/TransactionExamples.java">TransactionExamples.java</a> in the same repo.</p>
+<p>
+	For a recap on conditional writes, see part of a talk called <a href="http://youtu.be/Dh8kp1AcRg0?t=7m55s">Amazon DynamoDB Design Patterns for Ultra-High Performance Apps</a> from the <a href="http://reinvent.awsevents.com/recap2013.html">2013 AWS re: Invent conference</a>. You may find the rest of the talk useful as well, but the segment on conditional writes is only five minutes long.</p></div>
+  </div>
+
+  <div class="post-footer-block">
+  <div class="fl-r">
+    <ul class="share-buttons navigation inline-navigation">
+      <li class="quiet">
+        Share</li>
+      <li>
+        <span class="social-media email share-post">
+<a href="http://java.awsblog.com/blog/amazon/signin?continueURL=/blog/email/share%3FpostID=Tx13H2W58QMAOA7" class="share-url icon email-icon" onclick="window.open(&#39;/blog/amazon/signin?continueURL=/blog/email/share%3FpostID=Tx13H2W58QMAOA7&#39;, &#39;_blank&#39;, &#39;location=yes,width=700,height=600&#39;);return false;" title="Share via Email"></a>
+</span>
+</li>
+      <li>            
+        <span class="social-media facebook share-post">
+<a href="https://www.facebook.com/share.php?u=http%3A%2F%2Fjava.awsblog.com%2Fpost%2FTx13H2W58QMAOA7%2FPerforming-Conditional-Writes-Using-the-Amazon-DynamoDB-Transaction-Library&t=Performing%20Conditional%20Writes%20Using%20the%20Amazon%20DynamoDB%20Transaction%20Library" class="share-url icon facebook-icon" onclick="window.open(&#39;https://www.facebook.com/share.php?u=http%3A%2F%2Fjava.awsblog.com%2Fpost%2FTx13H2W58QMAOA7%2FPerforming-Conditional-Writes-Using-the-Amazon-DynamoDB-Transaction-Library&amp;t=Performing%20Conditional%20Writes%20Using%20the%20Amazon%20DynamoDB%20Transaction%20Library&#39;, &#39;_blank&#39;, &#39;location=yes,width=700,height=400&#39;);return false;" title="Share on Facebook"></a>
+</span>
+</li>
+      <li>
+        <span class="social-media twitter share-post">
+<a href="https://twitter.com/share?url=http%3A%2F%2Fjava.awsblog.com%2Fpost%2FTx13H2W58QMAOA7%2FPerforming-Conditional-Writes-Using-the-Amazon-DynamoDB-Transaction-Library&via=awsforjava&text=Performing+Conditional+Writes+Using+the+Amazon+DynamoDB+Transaction+Library&count=none" class="share-url icon twitter-icon" onclick="window.open(&#39;https://twitter.com/share?url=http%3A%2F%2Fjava.awsblog.com%2Fpost%2FTx13H2W58QMAOA7%2FPerforming-Conditional-Writes-Using-the-Amazon-DynamoDB-Transaction-Library&amp;via=awsforjava&amp;text=Performing+Conditional+Writes+Using+the+Amazon+DynamoDB+Transaction+Library&amp;count=none&#39;, &#39;_blank&#39;, &#39;location=yes,width=700,height=400&#39;);return false;" title="Share on Twitter"></a>
+</span></li>
+      </ul>
+  </div>
+<div>
+  <ul class="post-attributes navigation inline-navigation blog-ui-piped push-bottom-1">
+    <li>
+      <a href="http://java.awsblog.com/post/Tx13H2W58QMAOA7/Performing-Conditional-Writes-Using-the-Amazon-DynamoDB-Transaction-Library#" rel="bookmark">
+        <time datetime="2014-02-05T21:15:50.108Z" title="2014-02-05T21:15:50.108Z" class="post-creation-date">February 5, 2014</time></a>
+    </li>
+    <li>
+          <a href="http://java.awsblog.com/post/Tx13H2W58QMAOA7/Performing-Conditional-Writes-Using-the-Amazon-DynamoDB-Transaction-Library#" rel="bookmark">Permalink</a>
+        </li>
+    <li>
+          <a href="http://java.awsblog.com/post/Tx13H2W58QMAOA7/Performing-Conditional-Writes-Using-the-Amazon-DynamoDB-Transaction-Library#postCommentsTx13H2W58QMAOA7">Comments (<span id="commentNumber">4</span>)</a>
+        </li>
+    </ul>
+</div></div></article>
+</li>
+          </ul>
+      <nav class="paging" data-page-size="10" data-current-page="1" data-total-pages="1" data-total-items="2" data-root-dir="">
+  <ul class="navigation inline-navigation">
+    <li class="nav-link">
+      <span><span class="arrow-back-icon icon">&nbsp;</span>Previous</span>
+        </li>
+    
+    <li>
+        <a data-page="1" class="current" href="http://java.awsblog.com/blog/tag/DynamoDB?number=1&size=10">1</a>
+      </li>
+    <li class="nav-link">
+      <span>Next<span class="arrow-forward-icon icon">&nbsp;</span></span>
+        </li>
+  </ul>
+  
+  </nav></div>
+            <div id="sidebar" class="push-1 span-8 last">
+  <aside id="searchModule" class="module clearfix" data-module-initialized="1">
+  <form id="searchForm" action="http://java.awsblog.com/blog/search" method="get">
+    <div class="blog-ui-search-box aws-sprite">
+      <div class="aws-sprite">
+        <div class="search-module-input-wrapper wrapper-full">
+          <input type="text" name="q" class="query">
+        </div>
+      </div>
+    </div>
+    <button class="aws-sprite" type="submit">Search</button>
+  </form>
+    <div class="search-query-error" id="searchQueryError" style="display:none;">
+      <p>The search query cannot be empty or single character.</p>
+    </div>
+  <script type="text/javascript">
+  (function($) {
+    $(document).ready(function() {
+      var mod = new blogs.searchModule();
+
+      $('#searchForm').submit(function(e) {
+        var keywords = $.trim($('input[name="q"]').val());
+        if (keywords.length < 2) {
+          $('#searchQueryError').show();
+          return false;
+        }
+        return true;
+      });
+    
+      $('input[name="q"]').keyup(function(e) {
+        var keycode = (e.keyCode ? e.keyCode : e.which);
+        if(keycode != '13') {
+          $('#searchQueryError:visible').hide();
+        }
+      });
+    });
+  })(jQuery);
+  </script>  
+</aside><aside class="module navigation">
+    <iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" src="./AWS Developer Blog - Java_files/follow_button.1399506985.html" class="twitter-follow-button twitter-follow-button" title="Twitter Follow Button" data-twttr-rendered="true" style="width: 128px; height: 20px;"></iframe>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://cdn.amazonblogs.com/awsblog/assets/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    &nbsp;&nbsp;&nbsp;
+    <iframe src="./AWS Developer Blog - Java_files/ghbtn.html" allowtransparency="true" frameborder="0" scrolling="0" width="100px" height="20px"></iframe>
+  <a title="Recent Posts (RSS)" href="http://java.awsblog.com/blog/feed/recentPosts.rss"><img src="./AWS Developer Blog - Java_files/feed-icon.png"></a>
+</aside>
+<div id="reInvent-banner">
+  <a href="http://aws.amazon.com/new/reinvent?sc_ichannel=ha&sc_icountry=en&sc_icampaign=ha_reinvent_news&sc_icontent=ha_293&sc_idetail=ha_en_293_1&sc_iplace=ha_en_blogs&sc_isegment=3&">
+    <img src="./AWS Developer Blog - Java_files/reinvent-livestream-news-ad.jpg" alt="AWS re:Invent">
+  </a>
+</div>
+<aside id="recentPostsModule" class="module">
+  <h2>Latest Blog Entries</h2>
+
+  <div class="module-content">
+    <ul class="module-list navigation">
+      <li>
+          <div class="module-item module-link-item">
+            <a href="http://java.awsblog.com/post/Tx19OLB7M3D6DS8/S3-Encryption-with-AWS-Key-Management-Service">
+              S3 Encryption with AWS Key Management Service</a>
+          </div>
+        </li>
+      <li>
+          <div class="module-item module-link-item">
+            <a href="http://java.awsblog.com/post/Tx12VURHBNFLXMR/Announcing-the-AWS-CloudTrail-Processing-Library">
+              Announcing the AWS CloudTrail Processing Library</a>
+          </div>
+        </li>
+      <li>
+          <div class="module-item module-link-item">
+            <a href="http://java.awsblog.com/post/TxBSZ02ZOG3VPZ/AWS-SDK-for-Java-Maven-Modules">
+              AWS SDK for Java Maven Modules</a>
+          </div>
+        </li>
+      <li>
+          <div class="module-item module-link-item">
+            <a href="http://java.awsblog.com/post/TxI32GE4IG2SNS/Client-side-Encryption-for-Amazon-DynamoDB">
+              Client-side Encryption for Amazon DynamoDB</a>
+          </div>
+        </li>
+      <li>
+          <div class="module-item module-link-item">
+            <a href="http://java.awsblog.com/post/Tx3C0ANZBMQY1RL/Introducing-DynamoDB-Document-API-Part-2">
+              Introducing DynamoDB Document API (Part 2)</a>
+          </div>
+        </li>
+      <li>
+          <div class="module-item module-link-item">
+            <a href="http://java.awsblog.com/post/Tx1DDAWQGXWITSG/Introducing-DynamoDB-Document-API-Part-1">
+              Introducing DynamoDB Document API (Part 1)</a>
+          </div>
+        </li>
+      <li>
+          <div class="module-item module-link-item">
+            <a href="http://java.awsblog.com/post/Tx2ECG4CF748CBK/AWS-re-Invent-2014">
+              AWS re:Invent 2014</a>
+          </div>
+        </li>
+      <li>
+          <div class="module-item module-link-item">
+            <a href="http://java.awsblog.com/post/Tx1XFRAN5OWJT6J/Introducing-the-AWS-Resource-APIs-for-Java">
+              Introducing the AWS Resource APIs for Java</a>
+          </div>
+        </li>
+      <li>
+          <div class="module-item module-link-item">
+            <a href="http://java.awsblog.com/post/Tx1VW8X2W3775XC/AWS-Ant-Tasks">
+              AWS Ant Tasks</a>
+          </div>
+        </li>
+      <li>
+          <div class="module-item module-link-item">
+            <a href="http://java.awsblog.com/post/Tx3GBOIEN1JJMQ5/Determining-an-Application-s-Current-Region">
+              Determining an Application’s Current Region</a>
+          </div>
+        </li>
+      </ul>
+
+  </div>
+
+</aside><div class="module static-content" id="static-browse-blog-list-awsblog">
+  <h2>AWS Blogs</h2>
+  <div class="module-content">
+    <ul class="module-list navigation">
+      <li>
+        <a href="http://aws.amazon.com/blogs/aws/">The AWS Blog</a></li>
+      <li>
+        <a href="http://blogs.aws.amazon.com/security/">Security</a></li>
+      <li>
+        <a href="http://blogs.aws.amazon.com/cli/">AWS CLI</a></li>
+      <li>
+        <a href="http://blogs.aws.amazon.com/bigdata/">Big Data</a></li>
+      <li>
+        <a href="http://sesblog.amazon.com/">Amazon SES</a></li>
+      <li>
+        <a href="http://java.awsblog.com/">Java Development</a></li>
+      <li>
+        <a href="http://blogs.aws.amazon.com/javascript/">JavaScript Development</a></li>
+      <li>
+        <a href="http://mobile.awsblog.com/">Mobile Development</a></li>
+      <li>
+        <a href="http://blogs.aws.amazon.com/net/">.NET Development</a></li>
+      <li>
+        <a href="http://blogs.aws.amazon.com/php/">PHP Development</a></li>
+      <li>
+        <a href="http://ruby.awsblog.com/">Ruby Development</a></li>
+      <li>
+        <a href="http://blogs.aws.amazon.com/application-management">Application Management</a></li>
+      <li>
+        <a href="https://medium.com/aws-activate-startup-blog">AWS Activate</a></li>
+      <li>
+        <a href="http://www.awsarchitectureblog.com/">AWS Architecture</a></li>
+      <li>
+        <a href="http://aws.amazon.com/podcasts/aws-podcast/">Podcast</a></li>
+    </ul>
+  </div>
+</div>
+<div class="module static-content" id="static-browse-useful-link-java-awsblog">
+  <h2>Useful Links</h2>
+  <div class="module-content">
+    <ul class="module-list navigation">
+      <li>
+        <a href="https://github.com/aws/aws-sdk-java">AWS SDK for Java on GitHub</a></li>
+      <li>
+        <a href="http://aws.amazon.com/java/">AWS Java Development Center</a></li>
+      <li>
+        <a href="http://aws.amazon.com/articles/3586">AWS SDK for Java Getting Started Guide</a></li>
+      <li>
+        <a href="https://forums.aws.amazon.com/forum.jspa?forumID=70">AWS Java Development Forum</a></li>
+      <li>
+        <a href="http://aws.amazon.com/eclipse/">AWS Toolkit for Eclipse</a></li>
+    </ul>
+  </div>
+</div>
+<aside id="archiveModule" class="module" data-module-initialized="1">
+  <h2>Archive</h2>
+
+  <div class="module-content">
+     
+    
+    <select class="month">
+      <option class="default" value="0">Month</option>
+      <option value="1">January</option>
+      <option value="2">February</option>
+      <option value="3">March</option>
+      <option value="4">April</option>
+      <option value="5">May</option>
+      <option value="6">June</option>
+      <option value="7">July</option>
+      <option value="8">August</option>
+      <option value="9">September</option>
+      <option value="10">October</option>
+      <option value="11">November</option>
+      <option value="12">December</option>
+      </select> 
+    
+    <select class="day">
+      <option class="default" value="0">Day</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+      <option value="11">11</option>
+      <option value="12">12</option>
+      <option value="13">13</option>
+      <option value="14">14</option>
+      <option value="15">15</option>
+      <option value="16">16</option>
+      <option value="17">17</option>
+      <option value="18">18</option>
+      <option value="19">19</option>
+      <option value="20">20</option>
+      <option value="21">21</option>
+      <option value="22">22</option>
+      <option value="23">23</option>
+      <option value="24">24</option>
+      <option value="25">25</option>
+      <option value="26">26</option>
+      <option value="27">27</option>
+      <option value="28">28</option>
+      <option value="29">29</option>
+      <option value="30">30</option>
+      <option value="31">31</option>
+      </select><select class="year">
+      <option class="default" value="0">Year</option>
+      <option value="2014">2014</option>
+      <option value="2013">2013</option>
+      <option value="2012">2012</option>
+      <option value="2011">2011</option>
+      <option value="2010">2010</option>
+      <option value="2009">2009</option>
+      <option value="2008">2008</option>
+      <option value="2007">2007</option>
+      <option value="2006">2006</option>
+      <option value="2005">2005</option>
+      <option value="2004">2004</option>
+      </select>
+
+    <button class="go-button blog-ui-button" type="button">
+      <span>Go</span>
+    </button>
+  </div>
+  <script type="text/javascript">
+  (function($) {
+    $(document).ready(function() {
+      var mod = new blogs.archiveModule();
+    });
+  })(jQuery);
+  </script>
+</aside><div class="module static-content" id="static-browse-sdks-awsblog">
+  <h2>SDKs</h2>
+  <div class="module-content">
+    <ul class="module-list navigation">
+      <li>
+        <a href="http://aws.amazon.com/sdkforjava">AWS SDK for Java</a></li>
+      <li>
+        <a href="http://aws.amazon.com/sdkfornet">AWS SDK for .NET</a></li>
+      <li>
+        <a href="http://aws.amazon.com/sdkforruby">AWS SDK for Ruby</a></li>
+      <li>
+        <a href="http://aws.amazon.com/sdkforphp">AWS SDK for PHP</a></li>
+      <li>
+        <a href="https://github.com/boto/boto">AWS SDK for Python</a></li>
+      <li>
+        <a href="http://aws.amazon.com/sdkfornodejs">AWS SDK for Node.js</a></li>
+      <li>
+        <a href="http://aws.amazon.com/sdkforios">AWS SDK for iOS</a></li>
+      <li>
+        <a href="http://aws.amazon.com/sdkforandroid">AWS SDK for Android</a></li>
+    </ul>
+  </div>
+</div></div>
+</section>
+          <footer class="clearfix">
+  <hr class="aws-common-footer-separate-bar">
+  <div class="aws-common-footer-message-style aws-common-footer-message-color">©2014, Amazon Web Services, Inc. or its affiliates. All rights reserved.</div>
+  <div class="aws-common-footer-message-style"> 
+    <ul class="inline-navigation navigation">
+      <li>
+        <a href="http://aws.amazon.com/terms/">Terms of Use</a>
+      </li>
+      <li>
+        <a href="http://aws.amazon.com/privacy/">Privacy Policy</a>
+      </li>
+    </ul>
+  </div>
+  <script type="text/javascript">
+    SyntaxHighlighter.all()
+  </script>
+</footer></div>
+      </div>
+  <!-- Send to Kindle -->
+    <script type="text/javascript" src="./AWS Developer Blog - Java_files/widget.js"></script>
+    <script type="text/javascript">(function k(){window.$SendToKindle&&window.$SendToKindle.Widget?$SendToKindle.Widget.init({}):setTimeout(k,500);})();</script>
+    <!-- SiteCatalyst code version: H.25.1.
+Copyright 1996-2012 Adobe, Inc. All Rights Reserved
+More info available at http://www.omniture.com -->
+<script language="JavaScript" type="text/javascript" src="./AWS Developer Blog - Java_files/s_code.min.js"></script>
+
+<script language="JavaScript" type="text/javascript"><!--
+/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+var s_code=s.t();if(s_code)document.write(s_code)//--></script>
+<script language="JavaScript" type="text/javascript"><!--
+if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+//--></script><noscript>&lt;img src="//amazonwebservices.d2.sc.omtrdc.net/b/ss/awsamazondev/1/H.25.1--NS/0"
+height="1" width="1" border="0" alt="" /&gt;</noscript><!--/DO NOT REMOVE/-->
+<!-- End SiteCatalyst code version: H.25.1. -->  
+  
+<style>.tb_button {padding:1px;cursor:pointer;border-right: 1px solid #8b8b8b;border-left: 1px solid #FFF;border-bottom: 1px solid #fff;}.tb_button.hover {borer:2px outset #def; background-color: #f8f8f8 !important;}.ws_toolbar {z-index:100000} .ws_toolbar .ws_tb_btn {cursor:pointer;border:1px solid #555;padding:3px}   .tb_highlight{background-color:yellow} .tb_hide {visibility:hidden} .ws_toolbar img {padding:2px;margin:0px}</style></body></html>
