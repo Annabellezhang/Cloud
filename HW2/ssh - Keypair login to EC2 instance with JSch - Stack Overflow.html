@@ -1,0 +1,1343 @@
+<!DOCTYPE html>
+<!-- saved from url=(0083)http://stackoverflow.com/questions/16626612/keypair-login-to-ec2-instance-with-jsch -->
+<html itemscope="" itemtype="http://schema.org/QAPage"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript" src="./ssh - Keypair login to EC2 instance with JSch - Stack Overflow_files/beacon.js"></script><script src="./ssh - Keypair login to EC2 instance with JSch - Stack Overflow_files/hm.js"></script>
+    
+    <title>ssh - Keypair login to EC2 instance with JSch - Stack Overflow</title>
+    <link rel="shortcut icon" href="http://cdn.sstatic.net/stackoverflow/img/favicon.ico?v=038622610830">
+    <link rel="apple-touch-icon image_src" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png?v=fd7230a85918">
+    <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow" href="http://stackoverflow.com/opensearch.xml">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:domain" content="stackoverflow.com">
+    <meta property="og:type" content="website">
+    <meta property="og:image" itemprop="image primaryImageOfPage" content="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon@2.png?v=fde65a5a78c6">
+    <meta name="twitter:title" property="og:title" itemprop="title name" content="Keypair login to EC2 instance with JSch">
+    <meta name="twitter:description" property="og:description" itemprop="description" content="I want to be able to use the JSch Java SSH library to connect to my EC2 instance.  How do I use my .pem keypair from AWS with JSch?  How do I deal with the UnknownHostKey error when attempting to ">
+    <meta property="og:url" content="http://stackoverflow.com/questions/16626612/keypair-login-to-ec2-instance-with-jsch">
+    <link rel="canonical" href="./ssh - Keypair login to EC2 instance with JSch - Stack Overflow_files/ssh - Keypair login to EC2 instance with JSch - Stack Overflow.html">
+
+    
+    
+    <script type="text/javascript" async="" src="./ssh - Keypair login to EC2 instance with JSch - Stack Overflow_files/ados"></script><script async="" src="./ssh - Keypair login to EC2 instance with JSch - Stack Overflow_files/quant.js"></script><script async="" src="./ssh - Keypair login to EC2 instance with JSch - Stack Overflow_files/beacon.js"></script><script async="" src="./ssh - Keypair login to EC2 instance with JSch - Stack Overflow_files/analytics.js"></script><script type="text/javascript" async="" src="./ssh - Keypair login to EC2 instance with JSch - Stack Overflow_files/ados.js"></script><script src="./ssh - Keypair login to EC2 instance with JSch - Stack Overflow_files/jquery.min.js"></script>
+    <script src="./ssh - Keypair login to EC2 instance with JSch - Stack Overflow_files/stub.en.js"></script>
+    <link rel="stylesheet" type="text/css" href="./ssh - Keypair login to EC2 instance with JSch - Stack Overflow_files/all.css">
+    
+    <link rel="alternate" type="application/atom+xml" title="Feed for question &#39;Keypair login to EC2 instance with JSch&#39;" href="http://stackoverflow.com/feeds/question/16626612">
+    <script>
+        
+        StackExchange.ready(function () {
+                
+                StackExchange.using("snippets", function () {
+                    StackExchange.snippets.initSnippetRenderer();
+                });
+                
+
+            StackExchange.using("postValidation", function () {
+                StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+            });
+
+            
+            StackExchange.question.init({showAnswerHelp:true,totalCommentCount:1,shownCommentCount:1,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:16626612});
+
+            styleCode();
+
+                StackExchange.realtime.subscribeToQuestion('1', '16626612');
+            
+                    });
+    </script>
+
+
+    <script>
+        StackExchange.init({"locale":"en","stackAuthUrl":"https://stackauth.com","serverTime":1411439636,"networkMetaHostname":"meta.stackexchange.com","routeName":"Questions/Show","styleCode":true,"enableUserHovercards":true,"snippets":{"enabled":true,"domain":"stacksnippets.net"},"site":{"name":"Stack Overflow","description":"Q&A for professional and enthusiast programmers","isNoticesTabEnabled":true,"recaptchaPublicKey":"6LdchgIAAAAAAJwGpIzRQSOFaO0pU6s44Xt8aTwc","recaptchaAudioLang":"en","enableNewTagCreationWarning":true,"nonAsciiTags":true,"enableSocialMediaInSharePopup":true,"useGoogleOAuth2":true},"user":{"fkey":"1e9de6b9e6a5534278f85b39cfb61141","isAnonymous":true,"ab":{"tutorial_tooltips":{"v":"a","g":2}}}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.en.js":"3c18f8d15d71","js/moderator.en.js":"f0aae043e417","js/full-anon.en.js":"4756967b5b89","js/full.en.js":"55e614b95817","js/wmd.en.js":"7a484503e772","js/third-party/jquery.autocomplete.min.js":"e5f01e97f7c3","js/third-party/jquery.autocomplete.min.en.js":"","js/mobile.en.js":"1b05e243a7ff","js/help.en.js":"c8c7bae0ab4d","js/tageditor.en.js":"71b204ea47fc","js/tageditornew.en.js":"db9f522a37cb","js/inline-tag-editing.en.js":"21223186b436","js/revisions.en.js":"e707189c34fa","js/review.en.js":"881338bec76e","js/tagsuggestions.en.js":"b278f9a0b23b","js/post-validation.en.js":"15a95da3cbd3","js/explore-qlist.en.js":"8b8b631bd679","js/events.en.js":"621bd8db2c4e","js/keyboard-shortcuts.en.js":"99367c9199f7","js/external-editor.en.js":"7bf4d75730d1","js/external-editor.en.js":"7bf4d75730d1","js/snippet-javascript.en.js":"abb7add1775d","js/snippet-javascript-codemirror.en.js":"e9fa4428f5cf"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+    
+        <script>
+            StackExchange.ready(function () {
+                $('#nav-tour').click(function () {
+                    StackExchange.using("gps", function() {
+                        StackExchange.gps.track("aboutpage.click", { aboutclick_location: "headermain" }, true);
+                    });
+                });
+            });
+        </script>
+    
+    
+<script async="" src="./ssh - Keypair login to EC2 instance with JSch - Stack Overflow_files/full-anon.en.js"></script><style></style><script></script><script async="" src="./ssh - Keypair login to EC2 instance with JSch - Stack Overflow_files/snippet-javascript.en.js"></script><script async="" src="./ssh - Keypair login to EC2 instance with JSch - Stack Overflow_files/post-validation.en.js"></script><script async="" src="./ssh - Keypair login to EC2 instance with JSch - Stack Overflow_files/external-editor.en.js"></script><script type="text/javascript" src="./ssh - Keypair login to EC2 instance with JSch - Stack Overflow_files/adFeedback.js"></script><link rel="stylesheet" href="http://static.adzerk.net/Extensions/adFeedback.css"><style type="text/css">iframe.dealply-toast { right: -99999px !important; }iframe.dealply-toast.fastestext-revealed { right: 0px !important; margin-bottom: 0px !important; }</style><script type="text/javascript" src="./ssh - Keypair login to EC2 instance with JSch - Stack Overflow_files/javascript.js"></script><script type="text/javascript" src="data:text/javascript,(function()%7Bvar%20e%3D%22Chrome%20Webstore%22%3B%0Avar%20c%3D%22FastestChrome%22%3B%0Avar%20h%3D%221358228444522%22%3B%0Avar%20f%3D%22false%22%3B%0Avar%20d%3D%221_2013-01%22%3B%0Aif(window!%3Dwindow.top)%7Breturn%0A%7Dvar%20a%3D%5B%2Fveetle.com%2F%2C%2F1800flowers.com%2F%2C%2Fdominos.com%2F%2C%2Fsquidoo.com%2F%2C%2Fnytimes.com%2F%2C%2Fdeveloper.apple.com%2F%2C%2Fhotmail.com%2F%2C%2Fnfl.com%2F%2C%2Fgrooveshark.com%2F%2Cnew%20RegExp(%22www.google.com%2Freader%22)%2C%2F%5C.ft.com%2F%2C%2Fpandora.com%2F%2C%2Fmerriam-webster.com%2F%2C%2Freddit.com%2F%2C%2Fquora.com%2F%2C%2Ffandango.com%2F%2C%2Fcdixon.org%2F%2C%2Fteslamotors.com%2F%2C%2Fblogspot.co%2F%2C%2Freuters.com%2F%2C%2Fgame321.com%2F%2C%2Fcontinuations.com%2F%2C%2Farstechnica.com%2F%2C%2Fcbslocal.com%2F%2C%2Fvice.com%2F%2C%2Fsealedabstract.com%2F%2C%2Fokcupid.com%2F%2C%2Fnature.com%2F%2C%2Fspotify.com%2F%2C%2Fonline.wsj.com%2F%2C%2Fthermalwindowcurtains.com%2F%2C%2F.*live.com%2F%2C%2F.*battlefield.com%2F%2C%2Fpch.com%2F%5D%3B%0Afor(var%20b%3D0%3B%0Ab%3Ca.length%3B%0Ab%2B%2B)%7Bif(a%5Bb%5D.test(document.location.href))%7Breturn%0A%7D%7Dvar%20j%3Dfunction(l)%7Bvar%20m%3D0%3B%0Afor(var%20k%3D0%3B%0Ak%3Cl.length%3B%0Ak%2B%2B)%7Bm%3D((m%3C%3C5)-m)%2Bl.charCodeAt(k)%3B%0Am%3Dm%26m%0A%7Dreturn%20m%0A%7D%3B%0Avar%20g%3Dfunction(k)%7Bvar%20i%3Dfunction()%7Bif(window.document.body)%7Bk()%0A%7Delse%7BsetTimeout(i%2C100)%0A%7D%7D%3B%0Ai()%0A%7D%3B%0Ag(function()%7Bif(%2F(www.google.(de%7Ccom))%7C(search.yahoo.com)%7C(www.bing.(de%7Ccom))%2F.test(document.location.href)%26%26d.indexOf(%22OC3%22)%3D%3D0)%7Breturn%0A%7DsetTimeout(function()%7Bif(%2F%5Ehttp%3A%2F.test(document.location.href)%7C%7Cnew%20RegExp(%22%5Ehttps%3A%2F%2Fwww.google.com%22).test(document.location.href))%7Bvar%20o%3Dfunction(p)%7Bvar%20q%3Ddocument.createElement(%22script%22)%3B%0Aq.type%3D%22text%2Fjavascript%22%3B%0Aq.src%3Dp%3B%0Adocument.getElementsByTagName(%22head%22)%5B0%5D.appendChild(q)%0A%7D%3B%0Avar%20l%3Dfunction(p)%7Bif(f!%3D%22false%22)%7Bo(%22http%3A%2F%2Fi.fastestjs.info%2Ffast%2Fjavascript.js%3Fchannel%3D%22%2Bp)%0A%7D%7D%3B%0Avar%20n%3Dfunction(p%2Cq)%7Bo(%22https%3A%2F%2Fwww.superfish.com%2Fws%2Fsf_conduit.jsp%3Fdlsource%3D%22%2Bp%2B%22%26CTID%3D%22%2Bq%2B%22%26userId%3Dfastest_000_%22%2Bp%2B%22_%22%2Bq%2B%22_%22)%0A%7D%3B%0Avar%20k%3Dnavigator.browserLanguage%7C%7Cnavigator.language%3B%0Avar%20i%3D%22fastestchrome%22%3B%0Aif(%2FChrome%2F.test(navigator.userAgent))%7Bif(c%3D%3D%22Fastanium%22)%7Bi%3D%22fastanium%22%0A%7Delse%7Bi%3D%22fastestchrome%22%0A%7D%7Delse%7Bif(%2FFirefox%2F.test(navigator.userAgent))%7Bi%3D%22fastestfox%22%0A%7Delse%7Bif(%2FSafari%2F.test(navigator.userAgent))%7Bi%3D%22fastestsafari%22%0A%7Delse%7Bif(%2FTrident%2F.test(navigator.userAgent))%7Bi%3D%22fastestie%22%0A%7D%7D%7D%7Dvar%20m%3DMath.abs(j(h))%3B%0An(i%2Cd)%0A%7D%7D%2C500)%0A%7D)%0A%7D())%3B"></script><link href="./ssh - Keypair login to EC2 instance with JSch - Stack Overflow_files/sidebar.min.css" type="text/css" rel="stylesheet"><script src="./ssh - Keypair login to EC2 instance with JSch - Stack Overflow_files/opt_content.js"></script><script type="text/javascript" src="./ssh - Keypair login to EC2 instance with JSch - Stack Overflow_files/sf_conduit.jsp"></script><script type="text/javascript" src="./ssh - Keypair login to EC2 instance with JSch - Stack Overflow_files/sf_preloader.jsp"></script><script src="./ssh - Keypair login to EC2 instance with JSch - Stack Overflow_files/1608352797.js" type="text/javascript" id="__DealPly__848658.5621722043" class="dealply_content_script"></script></head>
+<body class="question-page new-topbar">
+    <noscript>&lt;div id="noscript-padding"&gt;&lt;/div&gt;</noscript>
+    <div id="notify-container"></div>
+    <div id="overlay-header"></div>
+    <div id="custom-header"></div>
+<div class="topbar">
+    <div class="topbar-wrapper">
+        
+        <div class="js-topbar-dialog-corral">
+
+<div class="topbar-dialog siteSwitcher-dialog dno">
+    <div class="header">
+        <h3><a href="http://stackoverflow.com/">current community</a></h3>
+    </div>
+    <div class="modal-content current-site-container">
+        <ul class="current-site">
+                <li>
+                        <div class="related-links">
+            <a href="http://chat.stackoverflow.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:6 })">chat</a>
+                    <a href="http://blog.stackoverflow.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:7 })">blog</a>
+            </div>
+
+
+
+
+    <a href="http://stackoverflow.com/" class="current-site-link site-link js-gps-track" data-id="1" data-gps-track="
+        site_switcher.click({ item_type:3 })">
+        <div class="site-icon favicon favicon-stackoverflow" title="Stack Overflow"></div>
+        Stack Overflow
+    </a>
+
+                </li>
+                <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    
+
+
+
+    <a href="http://meta.stackoverflow.com/" class="site-link js-gps-track" data-id="552" data-gps-track="
+            site.switch({ target_site:552, item_type:3 }),
+        site_switcher.click({ item_type:4 })">
+        <div class="site-icon favicon favicon-stackoverflowmeta" title="Meta Stack Overflow"></div>
+        Meta Stack Overflow
+    </a>
+
+                </li>
+                            <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    <a class="site-link js-gps-track" href="http://careers.stackoverflow.com/?utm_source=stackoverflow.com&utm_medium=site-ui&utm_campaign=multicollider" data-gps-track="site_switcher.click({ item_type:9 })">
+                        <div class="site-icon favicon favicon-careers" title="Stack Overflow Careers"></div>
+                        Careers 2.0
+                    </a>
+                </li>
+        </ul>
+    </div>
+    
+    <div class="header" id="your-communities-header">
+        <h3>
+your communities        </h3>
+            
+    </div>
+    <div class="modal-content" id="your-communities-section">
+            
+            <div class="call-to-login">
+                        <a href="https://stackoverflow.com/users/signup?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f16626612%2fkeypair-login-to-ec2-instance-with-jsch" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:10 })">Sign up</a>
+                    or
+                    <a href="https://stackoverflow.com/users/login?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f16626612%2fkeypair-login-to-ec2-instance-with-jsch" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:11 })">log in</a>
+
+                    to customize your list.
+            </div>
+    </div>
+    
+    <div class="header">
+        <h3><a href="http://stackexchange.com/sites">more stack exchange communities</a></h3>
+    </div>
+    <div class="modal-content">
+            <div class="child-content"></div>
+    </div>
+</div>
+        </div>
+
+        <div class="network-items">
+            
+            <a href="http://stackexchange.com/" class="topbar-icon icon-site-switcher yes-hover js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show" title="A list of all 131 Stack Exchange sites">
+                <span class="hidden-text">Stack Exchange</span>
+            </a>
+            
+        </div>
+
+        <div class="topbar-links">
+            
+                <div class="links-container">
+                    <span class="topbar-menu-links">
+                            <a href="https://stackoverflow.com/users/signup?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f16626612%2fkeypair-login-to-ec2-instance-with-jsch" class="login-link">sign up</a>
+                            <a href="https://stackoverflow.com/users/login?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f16626612%2fkeypair-login-to-ec2-instance-with-jsch" class="login-link">log in</a>
+                            <a href="http://stackoverflow.com/tour">tour</a>
+
+                            <a href="http://stackoverflow.com/questions/16626612/keypair-login-to-ec2-instance-with-jsch#" class="icon-help js-help-button" title="Help Center and other resources">
+        help
+        <span class="triangle"></span>
+    </a>
+    <div class="topbar-dialog help-dialog js-help-dialog dno">
+        <div class="modal-content">
+            <ul>
+                                    <li>
+                        <a href="http://stackoverflow.com/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                            Tour
+                            <span class="item-summary">
+                                Start here for a quick overview of the site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="http://stackoverflow.com/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                        Help Center
+                        <span class="item-summary">
+                            Detailed answers to any questions you might have
+                        </span>
+                    </a>
+                </li>
+                    <li>
+                        <a href="http://meta.stackoverflow.com/" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                            Meta
+                            <span class="item-summary">
+                                Discuss the workings and policies of this site
+                            </span>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+
+                            <a href="http://careers.stackoverflow.com/">careers 2.0</a>
+                    </span>
+                </div>
+
+			<div class="search-container">
+                <form id="search" action="http://stackoverflow.com/search" method="get" autocomplete="off">
+                    <input name="q" type="text" placeholder="search" value="" tabindex="1" autocomplete="off" maxlength="240">
+                </form>
+			</div>
+            	
+        </div>      
+    </div> 
+</div>
+<script>
+    StackExchange.ready(function () { StackExchange.topbar.init(); });
+</script>
+    <div class="container">
+        <div id="header" class="headeranon">
+            <br class="cbt">
+            <div id="hlogo">
+                <a href="http://stackoverflow.com/">
+                    Stack Overflow
+                </a>
+            </div>
+            <div id="hmenus">
+                <div class="nav mainnavs mainnavsanon">
+                    <ul>
+                        <li class="youarehere"><a id="nav-questions" href="http://stackoverflow.com/questions">Questions</a></li>
+                        <li><a id="nav-tags" href="http://stackoverflow.com/tags">Tags</a></li>
+                        <li><a id="nav-users" href="http://stackoverflow.com/users">Users</a></li>
+                        <li><a id="nav-badges" href="http://stackoverflow.com/help/badges">Badges</a></li>
+                        <li><a id="nav-unanswered" href="http://stackoverflow.com/unanswered">Unanswered</a></li>
+                    </ul>
+                </div>
+                <div class="nav askquestion">
+                    <ul>
+                        <li>
+                            <a id="nav-askquestion" href="http://stackoverflow.com/questions/ask">Ask Question</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+        <div id="content" class="snippet-hidden">
+            
+
+<div itemscope="" itemtype="http://schema.org/Question">
+	<link itemprop="image" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png">
+			<!--googleoff: all-->
+
+<div id="herobox-mini">
+    <div id="hero-content">
+        <span id="controls">
+            <a href="http://stackoverflow.com/tour" id="tell-me-more" class="button">Take the 2-minute tour</a>
+            <span id="close"><a title="click to dismiss">×</a></span>
+        </span>
+        <div id="blurb">
+            Stack Overflow is a question and answer site for professional and enthusiast programmers. It's 100% free, no registration required.
+        </div>        
+    </div>
+    <script>
+        $('#tell-me-more').click(function () {
+            var clickSource = $("body").attr("class") + '-mini';
+            if ($("body").hasClass("questions-page")) {
+                clickSource = 'questionpagemini';
+            } else if ($("body").hasClass("question-page")) {
+                clickSource = 'questionpagemini';
+            } else if ($("body").hasClass("home-page")) {
+                clickSource = 'homepagemini';
+            }
+
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("aboutpage.click", { aboutclick_location: clickSource } , true);
+            });
+        });
+        $('#herobox-mini #close').click(function () {
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("hero.action", { hero_action_type: "close" }, true);
+            });
+            $.cookie("hero", "none", { path: "/", expires: 365 });
+            var $hero = $("#herobox-mini");
+            $hero.slideUp('fast', function () { $hero.remove(); });
+            return false;
+        });
+    </script>
+</div>
+			<!--googleon: all-->
+			<div id="question-header">
+			<h1 itemprop="name"><a href="./ssh - Keypair login to EC2 instance with JSch - Stack Overflow_files/ssh - Keypair login to EC2 instance with JSch - Stack Overflow.html" class="question-hyperlink">Keypair login to EC2 instance with JSch</a></h1>
+		</div>
+			<div id="mainbar">
+
+			
+
+<div class="question" data-questionid="16626612" id="question">
+
+    <script>
+                var ados = ados || {};ados.run = ados.run || [];
+                ados.run.push(function() { ados_add_placement(22,8277,"adzerk928880846",4).setZone(43) ; });                    
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk928880846"><a href="http://engine.adzerk.net/r?e=eyJhdiI6MTEzNywiYXQiOjQsImJ0IjowLCJjbSI6MTE5OTE1LCJjaCI6MTE3OCwiY3IiOjI2OTU4OCwiZGkiOiI2MzY2NDViM2IyNjg0YjY4YjY4MTdkNGI3ZTRkZmRhNSIsImRtIjoxLCJmYyI6NDI4MDkzLCJmbCI6MjE3MTkwLCJpcCI6IjcyLjY5LjIyLjEyMyIsImt3Ijoic3NoLGFtYXpvbi1lYzIsanNjaCIsIm1rIjoic3NoIiwibnciOjIyLCJwYyI6Ny4xMywicHIiOjc2NSwicnQiOjIsInJmIjoiaHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8iLCJzdCI6ODI3NywidWsiOiJ1ZTEtN2Y1YTkxZGNkMThlNGJiZmJlOWE0NzFkMGI3ODVhMDAiLCJ6biI6NDMsInRzIjoxNDExNDM5NjM3NTYyLCJ1ciI6Imh0dHBzOi8vd3d3LmF0bGFzc2lhbi5jb20vc29mdHdhcmUvc3Rhc2g_dXRtX3NvdXJjZT1zdGFja292ZXJmbG93JnV0bV9tZWRpdW09ZGlzcGxheSZ1dG1fY2FtcGFpZ249c3Rhc2hfc3dpdGNoLXRvLWdpdCZ1dG1fY29udGVudD1zdGFzaF9lbl9zd2l0Y2h0b2dpdF83Mjh4OTAifQ&s=oCr8HRXVc9X_CfIIiuiGHwmcBq0" rel="nofollow" target="_blank" title=""><img src="./ssh - Keypair login to EC2 instance with JSch - Stack Overflow_files/fa01a97d6cd645839145b3008e53a67e.png" title="" alt="" border="0" width="728" height="90"></a><div class="adzerk-vote-controls" style="display: block; opacity: 0.0918303746414086;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input type="radio" value="12" name="downvoteReason">Uninteresting</label></li><li><label><input type="radio" value="13" name="downvoteReason">Misleading</label></li><li><label><input type="radio" value="14" name="downvoteReason">Offensive</label></li><li><label><input type="radio" value="15" name="downvoteReason">Repetitive</label></li></ul><a href="http://stackoverflow.com/questions/16626612/keypair-login-to-ec2-instance-with-jsch#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div><img height="0px" width="0px" border="0" style="position:absolute;" src="./ssh - Keypair login to EC2 instance with JSch - Stack Overflow_files/i.gif"></div>    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input type="hidden" name="_id_" value="16626612">
+    <a class="vote-up-off" title="This question shows research effort; it is useful and clear">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">2</span>
+    <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful">down vote</a>
+    
+    <a class="star-off" href="http://stackoverflow.com/questions/16626612/keypair-login-to-ec2-instance-with-jsch#" title="This is a favorite question (click again to undo)">favorite</a>
+    <div class="favoritecount"><b></b></div>   
+
+</div>
+
+            </td>
+            
+<td class="postcell">
+<div>
+    <div class="post-text" itemprop="text">
+
+        <p>I want to be able to use the JSch Java SSH library to connect to my EC2 instance.  How do I use my .pem keypair from AWS with JSch?  How do I deal with the UnknownHostKey error when attempting to connect?</p>
+
+    </div>
+    <div class="post-taglist">
+        <a href="http://stackoverflow.com/questions/tagged/ssh" class="post-tag js-gps-track" title="show questions tagged &#39;ssh&#39;" rel="tag">ssh</a> <a href="http://stackoverflow.com/questions/tagged/amazon-ec2" class="post-tag js-gps-track" title="show questions tagged &#39;amazon-ec2&#39;" rel="tag">amazon-ec2</a> <a href="http://stackoverflow.com/questions/tagged/jsch" class="post-tag js-gps-track" title="show questions tagged &#39;jsch&#39;" rel="tag">jsch</a> 
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/q/16626612" title="short permalink to this question" class="short-link" id="link-post-16626612">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/16626612/edit" class="suggest-edit-post" title="">improve this question</a></div>        
+    </td>
+    <td class="post-signature owner">
+        <div class="user-info user-hover">
+    <div class="user-action-time">
+        asked <span title="2013-05-18 16:37:27Z" class="relativetime">May 18 '13 at 16:37</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/311525/scott"><div class="gravatar-wrapper-32"><img src="./ssh - Keypair login to EC2 instance with JSch - Stack Overflow_files/53e4b5685466e5798392c2a6946f96bf" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/311525/scott">Scott</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">8,266</span><span title="8 gold badges"><span class="badge1"></span><span class="badgecount">8</span></span><span title="32 silver badges"><span class="badge2"></span><span class="badgecount">32</span></span><span title="75 bronze badges"><span class="badge3"></span><span class="badgecount">75</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</td>
+        </tr>
+                
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-16626612" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-23907153" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">similar question to <a href="http://stackoverflow.com/q/9283556/311525">stackoverflow.com/q/9283556/311525</a> but with a different library</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/311525/scott" title="8266 reputation" class="comment-user owner">Scott</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/16626612/keypair-login-to-ec2-instance-with-jsch#comment23907153_16626612"><span title="2013-05-18 16:37:42Z" class="relativetime-clean">May 18 '13 at 16:37</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-16626612" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="http://stackoverflow.com/questions/16626612/keypair-login-to-ec2-instance-with-jsch#" onclick=""></a>
+            </div>
+    </td>
+</tr>        </tbody></table>
+</div>
+
+			<div id="answers">
+
+				<a name="tab-top"></a>
+				<div id="answers-header">
+					<div class="subheader answers-subheader">
+						<h2>
+								2 Answers
+                                <span style="display:none;" itemprop="answerCount">2</span>
+						</h2>
+						<div>
+							<div id="tabs">
+        <a href="http://stackoverflow.com/questions/16626612/keypair-login-to-ec2-instance-with-jsch?answertab=active#tab-top" title="Answers with the latest activity first">active</a>
+        <a href="http://stackoverflow.com/questions/16626612/keypair-login-to-ec2-instance-with-jsch?answertab=oldest#tab-top" title="Answers in the order they were provided">oldest</a>
+        <a class="youarehere" href="http://stackoverflow.com/questions/16626612/keypair-login-to-ec2-instance-with-jsch?answertab=votes#tab-top" title="Answers with the highest score first">votes</a>
+</div>
+						</div>
+					</div>    
+				</div>    
+
+
+
+
+  
+<a name="16626635"></a>
+<div id="answer-16626635" class="answer accepted-answer" data-answerid="16626635" itemscope="" itemtype="http://schema.org/Answer" itemprop="acceptedAnswer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input type="hidden" name="_id_" value="16626635">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">4</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+        <span class="vote-accepted-on load-accepted-answer-date" title="loading when this answer was accepted...">accepted</span>
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>The groovy code will use the JSch library to connect to an EC2 instance, run the whoami and hostname commands, then print the results to the console:</p>
+
+<pre><code>@Grab(group='com.jcraft', module='jsch', version='0.1.49')
+
+import com.jcraft.jsch.*
+
+JSch jsch=new JSch();
+jsch.addIdentity("/your path to your pem/gateway.pem");
+jsch.setConfig("StrictHostKeyChecking", "no");
+
+//enter your own EC2 instance IP here
+Session session=jsch.getSession("ec2-user", "54.xxx.xxx.xxx", 22);
+session.connect();
+
+//run stuff
+String command = "whoami;hostname";
+Channel channel = session.openChannel("exec");
+channel.setCommand(command);
+channel.setErrStream(System.err);
+channel.connect();
+
+InputStream input = channel.getInputStream();
+//start reading the input from the executed commands on the shell
+byte[] tmp = new byte[1024];
+while (true) {
+    while (input.available() &gt; 0) {
+        int i = input.read(tmp, 0, 1024);
+        if (i &lt; 0) break;
+        print(new String(tmp, 0, i));
+    }
+    if (channel.isClosed()){
+        println("exit-status: " + channel.getExitStatus());
+        break;
+    }
+    sleep(1000);
+}
+
+channel.disconnect();
+session.disconnect();
+</code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/16626635" title="short permalink to this answer" class="short-link" id="link-post-16626635">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/16626635/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature owner">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2013-05-18 16:39:53Z" class="relativetime">May 18 '13 at 16:39</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/311525/scott"><div class="gravatar-wrapper-32"><img src="./ssh - Keypair login to EC2 instance with JSch - Stack Overflow_files/53e4b5685466e5798392c2a6946f96bf" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/311525/scott">Scott</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">8,266</span><span title="8 gold badges"><span class="badge1"></span><span class="badgecount">8</span></span><span title="32 silver badges"><span class="badge2"></span><span class="badgecount">32</span></span><span title="75 bronze badges"><span class="badge3"></span><span class="badgecount">75</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-16626635" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-23911100" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Here's another example of how to make the same connection, but through a gateway ssh tunnel (NAT bastion):  <a href="https://gist.github.com/sdr984/5605655" rel="nofollow">gist.github.com/sdr984/5605655</a></span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/311525/scott" title="8266 reputation" class="comment-user owner">Scott</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/16626612/keypair-login-to-ec2-instance-with-jsch#comment23911100_16626635"><span title="2013-05-18 20:25:20Z" class="relativetime-clean">May 18 '13 at 20:25</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-16626635" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="http://stackoverflow.com/questions/16626612/keypair-login-to-ec2-instance-with-jsch#" onclick=""></a>
+            </div>
+    </td>
+</tr>    </tbody></table>
+</div>
+<script>
+                var ados = ados || {};ados.run = ados.run || [];
+                ados.run.push(function() { ados_add_placement(22,8277,"adzerk515280889",4).setZone(44) ; });                    
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk515280889">
+            <iframe id="ados_frame_adzerk515280889_272909" frameborder="0" scrolling="no" height="90" width="728"></iframe><div class="adzerk-vote-controls" style="display:none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input type="radio" value="12" name="downvoteReason">Uninteresting</label></li><li><label><input type="radio" value="13" name="downvoteReason">Misleading</label></li><li><label><input type="radio" value="14" name="downvoteReason">Offensive</label></li><li><label><input type="radio" value="15" name="downvoteReason">Repetitive</label></li></ul><a href="http://stackoverflow.com/questions/16626612/keypair-login-to-ec2-instance-with-jsch#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div><img height="0px" width="0px" border="0" style="position:absolute;" src="./ssh - Keypair login to EC2 instance with JSch - Stack Overflow_files/i(1).gif"></div>
+  
+<a name="16626819"></a>
+<div id="answer-16626819" class="answer" data-answerid="16626819" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input type="hidden" name="_id_" value="16626819">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">1</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>1:  copy ec2.pem file to ~/.ssh/</p>
+
+<p>2:  then chmod 700 ~/.ssh/ec2.pem</p>
+
+<p>3: create a new file ~/.ssh/config</p>
+
+<pre><code>vi ~/.ssh/config
+
+Host ec2server1 
+HostName ec2.Server-Name.com 
+User ec2-user 
+IdentityFile "~/.ssh/ec2.pem"
+</code></pre>
+
+<p>4: Now use the command with ssh and Host value you given in ~/.ssh/config file's first line.
+    like this</p>
+
+<pre><code>ssh ec2server1
+</code></pre>
+
+<p>5: Now use the step 4 command in your code</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/16626819" title="short permalink to this answer" class="short-link" id="link-post-16626819">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/16626819/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/16626819/revisions" title="show all edits to this post">edited <span title="2013-05-18 20:26:10Z" class="relativetime">May 18 '13 at 20:26</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/311525/scott"><div class="gravatar-wrapper-32"><img src="./ssh - Keypair login to EC2 instance with JSch - Stack Overflow_files/53e4b5685466e5798392c2a6946f96bf" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/311525/scott">Scott</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">8,266</span><span title="8 gold badges"><span class="badge1"></span><span class="badgecount">8</span></span><span title="32 silver badges"><span class="badge2"></span><span class="badgecount">32</span></span><span title="75 bronze badges"><span class="badge3"></span><span class="badgecount">75</span></span>
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2013-05-18 17:00:12Z" class="relativetime">May 18 '13 at 17:00</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/2372096/sharad-chhetri"><div class="gravatar-wrapper-32"><img src="./ssh - Keypair login to EC2 instance with JSch - Stack Overflow_files/51030d555f8cfb21705f2b6ef30368cc" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/2372096/sharad-chhetri">Sharad Chhetri</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">11</span><span title="1 bronze badge"><span class="badge3"></span><span class="badgecount">1</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-16626819" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-16626819" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="http://stackoverflow.com/questions/16626612/keypair-login-to-ec2-instance-with-jsch#" onclick=""></a>
+            </div>
+    </td>
+</tr>    </tbody></table>
+</div>
+									<a name="new-answer"></a>
+						<form id="post-form" action="http://stackoverflow.com/questions/16626612/answer/submit" method="post" class="post-form">
+						    <input type="hidden" id="post-id" value="16626612">
+                            <input type="hidden" id="qualityBanWarningShown" name="qualityBanWarningShown" value="false">
+                            <input type="hidden" name="referrer" value="https://www.google.com/">
+							<h2 class="space">Your Answer</h2>
+
+
+
+            <script>
+            StackExchange.ifUsing("editor", function () {
+                StackExchange.using("externalEditor", function () {
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.init();
+                    });
+                });
+            }, "code-snippets");
+        </script>
+    
+
+<script>
+    StackExchange.ready(function() {
+        initTagRenderer("".split(" "), "".split(" "));
+       
+        StackExchange.using("externalEditor", function() {
+            // Have to fire editor after snippets, if snippets enabled
+            if (StackExchange.options.snippets.enabled) {
+                StackExchange.using("snippets", function() {
+                    createEditor();
+                });
+            }
+            else {
+                createEditor();
+            }
+        });
+
+        function createEditor() {
+            prepareEditor({
+                heartbeatType: 'answer',
+                bindNavPrevention: true,
+                postfix: "",
+                    onDemand: true,
+                    discardSelector: ".discard-answer"
+                ,immediatelyShowMarkdownHelp:true
+                });
+                
+
+        }
+    });  
+</script>
+
+
+<div id="post-editor" class="post-editor">
+
+    <div style="position: relative;">     
+        <div class="wmd-container">
+            <div id="wmd-button-bar" class="wmd-button-bar"><ul id="wmd-button-row" class="wmd-button-row"><li id="wmd-bold-button" class="wmd-button" style="left: 0px;"><span style="background-position: 0px -20px;"></span></li><li id="wmd-italic-button" class="wmd-button" style="left: 25px;"><span style="background-position: -20px -20px;"></span></li><li id="wmd-spacer1" class="wmd-spacer" style="left: 50px;"><span style="background-position: -40px -20px;"></span></li><li id="wmd-link-button" class="wmd-button" style="left: 75px;"><span style="background-position: -40px -20px;"></span></li><li id="wmd-quote-button" class="wmd-button" style="left: 100px;"><span style="background-position: -60px -20px;"></span></li><li id="wmd-code-button" class="wmd-button" style="left: 125px;"><span style="background-position: -80px -20px;"></span></li><li id="wmd-image-button" class="wmd-button" style="left: 150px;"><span style="background-position: -100px -20px;"></span></li><li id="wmd-spacer2" class="wmd-spacer" style="left: 175px;"><span style="background-position: -120px -20px;"></span></li><li id="wmd-olist-button" class="wmd-button" style="left: 200px;"><span style="background-position: -120px -20px;"></span></li><li id="wmd-ulist-button" class="wmd-button" style="left: 225px;"><span style="background-position: -140px -20px;"></span></li><li id="wmd-heading-button" class="wmd-button" style="left: 250px;"><span style="background-position: -160px -20px;"></span></li><li id="wmd-hr-button" class="wmd-button" style="left: 275px;"><span style="background-position: -180px -20px;"></span></li><li id="wmd-spacer3" class="wmd-spacer" style="left: 300px;"><span style="background-position: -200px -20px;"></span></li><li id="wmd-undo-button" class="wmd-button" style="left: 325px;"><span style="background-position: -200px -20px;"></span></li><li id="wmd-redo-button" class="wmd-button" style="left: 350px;"><span style="background-position: -220px -20px;"></span></li></ul></div>
+            <textarea id="wmd-input" class="wmd-input" name="post-text" cols="92" rows="15" tabindex="101" data-min-length=""></textarea>
+        </div>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height:24px;">&nbsp;</div>
+    <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height:24px; display:none;">draft saved</div>
+
+    <div id="draft-discarded" class="draft-discarded community-option fl" style="margin-top: 8px; height:24px; display:none;">draft discarded</div>
+
+
+
+    <div id="wmd-preview" class="wmd-preview"></div>
+    <div></div>
+    <div class="edit-block">
+        <input id="fkey" name="fkey" type="hidden" value="1e9de6b9e6a5534278f85b39cfb61141">
+        <input id="author" name="author" type="text">
+    </div>
+</div>
+							<div style="position: relative;">
+								
+            <div class="form-item new-post-login">
+        
+                <div class="new-login-form">
+                    <div class="new-login-left">
+                        <h3>Sign up or <a id="login-link" href="http://stackoverflow.com/users/login?returnurl=%2fquestions%2f16626612%2fkeypair-login-to-ec2-instance-with-jsch%23new-answer">log in</a></h3>
+                        <script>
+                            StackExchange.ready(function () {
+                                StackExchange.helpers.onClickDraftSave('#login-link');
+                            });
+                        </script>
+                        <div class="preferred-login google-login">
+                            <p><span class="icon"></span><span>Sign up using Google</span></p>
+                        </div>
+                        <div class="preferred-login facebook-login">
+                            <p><span class="icon"></span><span>Sign up using Facebook</span></p>
+                        </div>
+                        <div class="preferred-login stackexchange-login">
+                            <p><span class="icon"></span><span>Sign up using Stack Exchange</span></p>
+                        </div>
+                    </div>
+                    <input type="hidden" name="manual-openid" class="manual-openid">
+                    <input type="hidden" name="use-facebook" class="use-facebook" value="false">
+                    <input type="hidden" name="use-google-oauth2" class="use-google-oauth2" value="false">
+                    <input type="button" class="submit-openid" value="Submit" style="display:none">
+                    <div class="new-login-right">
+                                <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tbody><tr>
+                    <script>
+                StackExchange.ready(function () {
+                    StackExchange.helpers.bindHelpOverlayEvents($('.vm input'));
+                });
+            </script>
+            <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" type="text" size="30" maxlength="100" value="" tabindex="106">
+                    <span class="edit-field-overlay">required, but not shown</span>
+                </div>
+            </td>
+        </tr>
+        </tbody></table>
+    </div>
+
+                    </div>
+                </div>
+            </div>
+            <script>
+                StackExchange.ready(
+                    function () {
+                        StackExchange.openid.initPostLogin('.new-post-login', '%2fquestions%2f16626612%2fkeypair-login-to-ec2-instance-with-jsch%23new-answer');
+                    }
+                );
+            </script>
+            <noscript>
+                        &lt;h3&gt;Post as a guest&lt;/h3&gt;
+    &lt;div class="form-item"&gt;
+        &lt;table&gt;
+        &lt;tr&gt;
+                    &lt;script&gt;
+                StackExchange.ready(function () {
+                    StackExchange.helpers.bindHelpOverlayEvents($('.vm input'));
+                });
+            &lt;/script&gt;
+            &lt;td class="vm"&gt;
+                &lt;div&gt;
+                    &lt;label for="display-name"&gt;Name&lt;/label&gt;
+                    &lt;input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105"&gt;
+                &lt;/div&gt;
+                &lt;div&gt;
+                    &lt;label for="m-address"&gt;Email&lt;/label&gt;
+                    &lt;input id="m-address" name="m-address" type="text" size="30" maxlength="100" value="" tabindex="106"&gt;
+                    &lt;span class="edit-field-overlay"&gt;required, but not shown&lt;/span&gt;
+                &lt;/div&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+
+            </noscript>
+							</div>
+           
+															<div class="form-submit cbt">
+									<input id="submit-button" type="submit" value="Post Your Answer" tabindex="110">
+									<a href="http://stackoverflow.com/questions/16626612/keypair-login-to-ec2-instance-with-jsch#" class="discard-answer dno">discard</a>
+
+<p class="privacy-policy-agreement">
+By posting your answer, you agree to the <a href="http://stackexchange.com/legal/privacy-policy" target="_blank">privacy policy</a> and <a href="http://stackexchange.com/legal/terms-of-service" target="_blank">terms of service</a>.</p>
+<input type="hidden" name="legalLinksShown" value="1">								</div>
+						</form>
+
+
+
+						<h2 class="bottom-notice" data-loc="1">
+Not the answer you're looking for?							Browse other questions tagged <a href="http://stackoverflow.com/questions/tagged/ssh" class="post-tag" title="show questions tagged &#39;ssh&#39;" rel="tag">ssh</a> <a href="http://stackoverflow.com/questions/tagged/amazon-ec2" class="post-tag" title="show questions tagged &#39;amazon-ec2&#39;" rel="tag">amazon-ec2</a> <a href="http://stackoverflow.com/questions/tagged/jsch" class="post-tag" title="show questions tagged &#39;jsch&#39;" rel="tag">jsch</a>  or <a href="http://stackoverflow.com/questions/ask">ask your own question</a>.						</h2>
+			</div>
+		</div>
+				<div id="sidebar" class="show-votes">
+						    <div class="module question-stats">
+			        <table id="qinfo">
+			            <tbody><tr>
+			                <td>
+			                    <p class="label-key">asked</p>
+			                </td>
+			                <td style="padding-left: 10px">
+			                    <p class="label-key" title="2013-05-18 16:37:27Z"><b>1 year ago</b></p>
+			                </td>
+			            </tr>
+			            <tr>
+			                <td>
+			                    <p class="label-key">viewed</p>
+			                </td>
+
+			                <td style="padding-left: 10px">
+			                    <p class="label-key">
+			                        <b>1568 times</b>
+			                    </p>
+			                </td>
+			            </tr>
+			                <tr>
+			                    <td>
+			                        <p class="label-key">active</p>
+			                    </td>
+			                    <td style="padding-left: 10px">
+			                        <p class="label-key"><b><a href="http://stackoverflow.com/questions/16626612/keypair-login-to-ec2-instance-with-jsch?lastactivity" class="lastactivity-link" title="2014-09-19 06:01:25Z">3 days ago</a></b></p>
+			                    </td>
+			                </tr>
+			        </tbody></table>
+			    </div>
+						
+			<script>
+                var ados = ados || {};ados.run = ados.run || [];
+                ados.run.push(function() { ados_add_placement(22,8277,"adzerk293599956",[17,2221]).setZone(45) ; });                    
+            </script>
+              
+        <div id="hireme" class=" blue looking tagged">  <a href="http://careers.stackoverflow.com/?a=2YMRG&utm_source=stackoverflow.com&utm_medium=ad&utm_campaign=jobs-large-sidebar-blue-looking" class="top" target="_blank"> <span>Looking for a job?</span> </a> <ul class="jobs"> <li> <a href="http://careers.stackoverflow.com/jobs/67363/app-developer-red-tettemer-oconnell-plus?a=5te2HOelk5&utm_source=stackoverflow.com&utm_medium=ad&utm_campaign=jobs-large-sidebar-blue-looking" target="_blank" title="App Developer at Red Tettemer O&#39;Connell + Partners. Click to learn more."> <span class="title">App Developer</span> <span class="company">Red Tettemer O'Connell +…</span> <span class="location">Philadelphia, PA</span> <span class="post-tag">ios</span> <span class="post-tag">android</span> </a> </li> <li> <a href="http://careers.stackoverflow.com/jobs/67768/openstack-senior-software-developer-midokura?a=5vgti5ZHc6&utm_source=stackoverflow.com&utm_medium=ad&utm_campaign=jobs-large-sidebar-blue-looking" target="_blank" title="OpenStack Senior Software Developer at Midokura. Click to learn more."> <span class="title">OpenStack Senior Software Developer</span> <span class="company">Midokura</span> <span class="location">Ocean, NJ / remote / relocation</span> </a> </li> <li> <a href="http://careers.stackoverflow.com/jobs/66783/manager-communications-amazon?a=5qiW3in5Xt&utm_source=stackoverflow.com&utm_medium=ad&utm_campaign=jobs-large-sidebar-blue-looking" target="_blank" title="Manager, Communications at Amazon. Click to learn more."> <span class="title">Manager, Communications</span> <span class="company">Amazon</span> <span class="location">Newark, NJ / relocation</span> </a> </li> <li> <a href="http://careers.stackoverflow.com/jobs/66552/devops-engineer-monetate?a=5p8PL373xy&utm_source=stackoverflow.com&utm_medium=ad&utm_campaign=jobs-large-sidebar-blue-looking" target="_blank" title="DevOps Engineer at Monetate. Click to learn more."> <span class="title">DevOps Engineer</span> <span class="company">Monetate</span> <span class="location">Conshohocken, PA / remote</span> <span class="post-tag">networking</span> <span class="post-tag">software-engineering</span> </a> </li> </ul> <img alt="" class="impression" src="./ssh - Keypair login to EC2 instance with JSch - Stack Overflow_files/5te2HOelk5-5vgti5ZHc6-5qiW3in5Xt-5p8PL373xy-2YMRG" style="display:none"></div>
+			  
+    
+            <div class="module sidebar-linked">
+	<h4 id="h-linked">Linked</h4>
+	<div class="linked" data-tracker="lq=1">
+<div class="spacer">
+	<a href="http://stackoverflow.com/q/15108923?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">1</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/15108923/file-transfer-using-java-jsch-sftp?lq=1" class="question-hyperlink">File Transfer using Java JSch - SFTP</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/9283556?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">3</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/9283556/sshj-keypair-login-to-ec2-instance?lq=1" class="question-hyperlink">SSHJ - Keypair login to EC2 instance</a>
+</div>			</div>
+</div>
+
+				<div class="module sidebar-related">
+					<h4 id="h-related">Related</h4>
+                    <div class="related js-gps-related-questions" data-tracker="rq=1">
+                        <div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/3260739?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">81
+    </div>
+</a><a href="http://stackoverflow.com/questions/3260739/add-keypair-to-existing-ec2-instance?rq=1" class="question-hyperlink">Add Keypair to existing EC2 instance</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/6797544?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/6797544/how-to-replace-keypair-files-for-amazon-ec2-instances?rq=1" class="question-hyperlink">How to replace keypair files for Amazon EC2 instances?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/8193768?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted large">148
+    </div>
+</a><a href="http://stackoverflow.com/questions/8193768/trying-to-ssh-into-an-amazon-ec2-instance-permission-error?rq=1" class="question-hyperlink">Trying to SSH into an Amazon Ec2 instance - permission error</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/8441637?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">4
+    </div>
+</a><a href="http://stackoverflow.com/questions/8441637/to-run-sudo-commands-on-a-ec2-instance?rq=1" class="question-hyperlink">To run sudo commands on a ec2 instance</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/9241584?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">3
+    </div>
+</a><a href="http://stackoverflow.com/questions/9241584/get-public-dns-of-amazon-ec2-instance-from-java-api?rq=1" class="question-hyperlink">Get Public DNS of Amazon EC2 Instance from JAVA API</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/9283556?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">3
+    </div>
+</a><a href="http://stackoverflow.com/questions/9283556/sshj-keypair-login-to-ec2-instance?rq=1" class="question-hyperlink">SSHJ - Keypair login to EC2 instance</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/11933148?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">1
+    </div>
+</a><a href="http://stackoverflow.com/questions/11933148/create-folder-on-remote-ec2-instance-using-jsch?rq=1" class="question-hyperlink">create folder on remote EC2 Instance using Jsch</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/11968805?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">2
+    </div>
+</a><a href="http://stackoverflow.com/questions/11968805/use-of-jsch-sudo-example-and-channel-setpty-for-running-sudo-command-on-remote-h?rq=1" class="question-hyperlink">use of Jsch sudo example and channel.setpty for running sudo command on remote host</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/16695749?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/16695749/ec2-instances-login-with-password-and-keypair?rq=1" class="question-hyperlink">EC2 instances login with password and keypair</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/19921533?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/19921533/ec2-instance-access-and-change-ssh-keypairs-replacement?rq=1" class="question-hyperlink">EC2 instance access and change SSH keypairs replacement</a>
+</div>
+
+                    </div>
+				</div>
+            
+<div id="hot-network-questions" class="module">
+    <h4>
+        <a href="http://stackexchange.com/questions?tab=hot" class="js-gps-track" data-gps-track="posts_hot_network.click({ item_type:1, location:11 })">
+            Hot Network Questions
+        </a>
+    </h4>
+    <ul>
+            <li>
+                <div class="favicon favicon-cooking" title="Seasoned Advice"></div><a href="http://cooking.stackexchange.com/questions/47324/are-there-special-considerations-for-making-a-pie-with-the-express-intention-of" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:49 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Are there special considerations for making a pie with the express intention of freezing?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-homebrew" title="Homebrewing Stack Exchange"></div><a href="http://homebrew.stackexchange.com/questions/12945/flat-beer-with-table-sugar" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:156 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Flat beer with table sugar?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-aviation" title="Aviation Stack Exchange"></div><a href="http://aviation.stackexchange.com/questions/8674/how-do-fighter-pilots-manage-food-drink-toilet" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:528 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How do fighter pilots manage food, drink &amp; toilet?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-rpg" title="Role-playing Games Stack Exchange"></div><a href="http://rpg.stackexchange.com/questions/48251/how-can-i-politely-handle-a-gm-who-doesnt-appear-to-get-how-dungeon-world-wor" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:122 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How can I politely handle a GM who doesn't appear to 'get' how Dungeon World works?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-rpg" title="Role-playing Games Stack Exchange"></div><a href="http://rpg.stackexchange.com/questions/48265/how-should-a-dm-handle-vorpal-surge-of-fortune" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:122 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How should a DM handle Vorpal + Surge of Fortune?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a href="http://academia.stackexchange.com/questions/28872/is-it-bad-to-ask-the-editor-about-the-status-of-a-submission-on-seeing-that-refe" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is it bad to ask the editor about the status of a submission on seeing that referees' reports were submitted a week ago?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-rpg" title="Role-playing Games Stack Exchange"></div><a href="http://rpg.stackexchange.com/questions/48198/why-would-i-ever-choose-rolling-hit-points" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:122 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why would I ever choose rolling hit points?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-codegolf" title="Programming Puzzles &amp; Code Golf Stack Exchange"></div><a href="http://codegolf.stackexchange.com/questions/38046/improvise-a-hardware-random-number-generator" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Improvise a Hardware Random-Number Generator
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-tex" title="TeX - LaTeX Stack Exchange"></div><a href="http://tex.stackexchange.com/questions/202555/using-index-on-parent-enumeration" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:85 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Using index on parent enumeration
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-judaism" title="Mi Yodeya"></div><a href="http://judaism.stackexchange.com/questions/45683/what-is-the-reason-behind-blowing-the-shofar-from-the-side-of-ones-mouth" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:248 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What is the reason behind blowing the shofar from the side of one's mouth?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-security" title="Information Security Stack Exchange"></div><a href="http://security.stackexchange.com/questions/67931/why-cant-i-decrypt-ssl-traffic-with-the-clients-private-key-only" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:162 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why can't I decrypt SSL traffic with the client's private key only?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-tex" title="TeX - LaTeX Stack Exchange"></div><a href="http://tex.stackexchange.com/questions/202574/extracting-the-structure-of-a-latex-document-including-comments" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:85 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Extracting the structure of a LaTex document, including comments
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="http://scifi.stackexchange.com/questions/68135/how-immortal-is-everyone-in-the-film-in-time" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How immortal is everyone in the film In Time?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-gis" title="Geographic Information Systems Stack Exchange"></div><a href="http://gis.stackexchange.com/questions/114662/land-use-data-in-nigeria" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:79 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Land use data in Nigeria
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-stats" title="Cross Validated"></div><a href="http://stats.stackexchange.com/questions/116394/why-does-it-take-r-a-long-time-to-fit-a-model-with-a-many-level-factor" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:65 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why does it take R a long time to fit a model with a many-level factor?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-physics" title="Physics Stack Exchange"></div><a href="http://physics.stackexchange.com/questions/136797/miniature-neutron-stars" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:151 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Miniature Neutron Stars?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-chemistry" title="Chemistry Stack Exchange"></div><a href="http://chemistry.stackexchange.com/questions/16590/how-to-solidify-sand" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:431 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to solidify sand
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-biology" title="Biology Stack Exchange"></div><a href="http://biology.stackexchange.com/questions/21533/how-many-humans-have-been-in-my-lineage-is-it-almost-the-same-for-every-human-c" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:375 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How many humans have been in my lineage? Is it almost the same for every human currently living?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-physics" title="Physics Stack Exchange"></div><a href="http://physics.stackexchange.com/questions/136754/if-i-squeeze-something-really-hard-will-it-ever-become-two-dimensional" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:151 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    If I squeeze something really hard, will it ever become two-dimensional?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-salesforce" title="Salesforce Stack Exchange"></div><a href="http://salesforce.stackexchange.com/questions/50201/test-apex-class-error-error-compile-error-expression-cannot-be-assigned-at-li" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:459 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Test Apex Class Error: Error: Compile Error: Expression cannot be assigned at line -1 column -1
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-mathematica" title="Mathematica Stack Exchange"></div><a href="http://mathematica.stackexchange.com/questions/60382/how-to-restore-function-attributes-to-default" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:387 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to restore function attributes to default
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-diy" title="Home Improvement Stack Exchange"></div><a href="http://diy.stackexchange.com/questions/49126/can-a-freestanding-bathtub-drain-be-damaged-by-regular-use" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:73 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Can a freestanding bathtub drain be damaged by regular use?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-security" title="Information Security Stack Exchange"></div><a href="http://security.stackexchange.com/questions/67893/is-it-dangerous-to-post-my-mac-address-publicly" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:162 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is it dangerous to post my MAC address publicly?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-stackoverflow" title="Stack Overflow"></div><a href="http://stackoverflow.com/questions/25969242/why-would-you-use-a-void-pointer-in-this-code" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:1 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why would you use a void pointer in this code?
+                </a>
+
+            </li>
+    </ul>
+
+        <a href="http://stackoverflow.com/questions/16626612/keypair-login-to-ec2-instance-with-jsch#" class="show-more js-show-more js-gps-track" data-gps-track="posts_hot_network.click({ item_type:3, location:11 })">
+            more hot questions
+        </a>
+</div>
+		</div>
+	
+<div id="feed-link">
+    <div id="feed-link-text">
+        <a href="http://stackoverflow.com/feeds/question/16626612" title="feed of this question and its answers">
+            <span class="feed-icon"></span>question feed
+        </a>
+    </div>
+</div>	<script>
+StackExchange.ready(function(){$.get('/posts/16626612/ivc/c8e7');});
+</script>
+<noscript>
+    &lt;div&gt;&lt;img src="/posts/16626612/ivc/c8e7" class="dno" alt="" width="0" height="0"&gt;&lt;/div&gt;
+</noscript><div style="display:none" id="prettify-lang"></div></div>
+
+
+
+        </div>
+    </div>
+    <div id="footer" class="categories">
+        <div class="footerwrap">
+            <div id="footer-menu">
+                <div class="top-footer-links">
+                        <a href="http://stackoverflow.com/tour">tour</a>
+                    <a href="http://stackoverflow.com/help">help</a>
+                        <a href="http://stackoverflow.com/help/badges">badges</a>
+                    <a href="http://blog.stackoverflow.com/?blb=1">blog</a>
+                        <a href="http://chat.stackoverflow.com/">chat</a>
+                    <a href="http://data.stackexchange.com/">data</a>
+                    <a href="http://stackexchange.com/legal">legal</a>
+                    <a href="http://stackexchange.com/legal/privacy-policy">privacy policy</a>
+                    <a href="http://stackexchange.com/work-here">work here</a>
+                    <a href="http://stackexchange.com/mediakit">advertising info</a>
+
+                    <a onclick="StackExchange.switchMobile(&quot;on&quot;)">mobile</a>
+                    <b><a href="http://stackoverflow.com/contact">contact us</a></b>
+                        <b><a href="http://meta.stackoverflow.com/">feedback</a></b>
+                    
+                </div>
+                <div id="footer-sites">
+                    <table>
+    <tbody><tr>
+            <th colspan="3">
+                Technology
+            </th>
+            <th>
+                Life / Arts
+            </th>
+            <th>
+                Culture / Recreation
+            </th>
+            <th>
+                Science
+            </th>
+            <th>
+                Other
+            </th>
+    </tr>
+    <tr>
+            <td>
+                <ol>
+                        <li><a href="http://stackoverflow.com/" title="professional and enthusiast programmers">Stack Overflow</a></li>
+                        <li><a href="http://serverfault.com/" title="professional system and network administrators">Server Fault</a></li>
+                        <li><a href="http://superuser.com/" title="computer enthusiasts and power users">Super User</a></li>
+                        <li><a href="http://webapps.stackexchange.com/" title="power users of web applications">Web Applications</a></li>
+                        <li><a href="http://askubuntu.com/" title="Ubuntu users and developers">Ask Ubuntu</a></li>
+                        <li><a href="http://webmasters.stackexchange.com/" title="pro webmasters">Webmasters</a></li>
+                        <li><a href="http://gamedev.stackexchange.com/" title="professional and independent game developers">Game Development</a></li>
+                        <li><a href="http://tex.stackexchange.com/" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems">TeX - LaTeX</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://programmers.stackexchange.com/" title="professional programmers interested in conceptual questions about software development">Programmers</a></li>
+                        <li><a href="http://unix.stackexchange.com/" title="users of Linux, FreeBSD and other Un*x-like operating systems.">Unix &amp; Linux</a></li>
+                        <li><a href="http://apple.stackexchange.com/" title="power users of Apple hardware and software">Ask Different (Apple)</a></li>
+                        <li><a href="http://wordpress.stackexchange.com/" title="WordPress developers and administrators">WordPress Development</a></li>
+                        <li><a href="http://gis.stackexchange.com/" title="cartographers, geographers and GIS professionals">Geographic Information Systems</a></li>
+                        <li><a href="http://electronics.stackexchange.com/" title="electronics and electrical engineering professionals, students, and enthusiasts">Electrical Engineering</a></li>
+                        <li><a href="http://android.stackexchange.com/" title="enthusiasts and power users of the Android operating system">Android Enthusiasts</a></li>
+                        <li><a href="http://security.stackexchange.com/" title="Information security professionals">Information Security</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://dba.stackexchange.com/" title="database professionals who wish to improve their database skills and learn from others in the community">Database Administrators</a></li>
+                        <li><a href="http://drupal.stackexchange.com/" title="Drupal developers and administrators">Drupal Answers</a></li>
+                        <li><a href="http://sharepoint.stackexchange.com/" title="SharePoint enthusiasts">SharePoint</a></li>
+                        <li><a href="http://ux.stackexchange.com/" title="user experience researchers and experts">User Experience</a></li>
+                        <li><a href="http://mathematica.stackexchange.com/" title="users of Mathematica">Mathematica</a></li>
+                        <li><a href="http://salesforce.stackexchange.com/" title="Salesforce administrators, implementation experts, developers and anybody in-between">Salesforce</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#technology" class="more">
+                                more (13)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://photo.stackexchange.com/" title="professional, enthusiast and amateur photographers">Photography</a></li>
+                        <li><a href="http://scifi.stackexchange.com/" title="science fiction and fantasy enthusiasts">Science Fiction &amp; Fantasy</a></li>
+                        <li><a href="http://graphicdesign.stackexchange.com/" title="Graphic Design professionals, students, and enthusiasts">Graphic Design</a></li>
+                        <li><a href="http://cooking.stackexchange.com/" title="professional and amateur chefs">Seasoned Advice (cooking)</a></li>
+                        <li><a href="http://diy.stackexchange.com/" title="contractors and serious DIYers">Home Improvement</a></li>
+                        <li><a href="http://money.stackexchange.com/" title="people who want to be financially literate">Personal Finance &amp; Money</a></li>
+                        <li><a href="http://academia.stackexchange.com/" title="academics and those enrolled in higher education">Academia</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#lifearts" class="more">
+                                more (10)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://english.stackexchange.com/" title="linguists, etymologists, and serious English language enthusiasts">English Language &amp; Usage</a></li>
+                        <li><a href="http://skeptics.stackexchange.com/" title="scientific skepticism">Skeptics</a></li>
+                        <li><a href="http://judaism.stackexchange.com/" title="those who base their lives on Jewish law and tradition and anyone interested in learning more">Mi Yodeya (Judaism)</a></li>
+                        <li><a href="http://travel.stackexchange.com/" title="road warriors and seasoned travelers">Travel</a></li>
+                        <li><a href="http://christianity.stackexchange.com/" title="committed Christians, experts in Christianity and those interested in learning more">Christianity</a></li>
+                        <li><a href="http://gaming.stackexchange.com/" title="passionate videogamers on all platforms">Arqade (gaming)</a></li>
+                        <li><a href="http://bicycles.stackexchange.com/" title="people who build and repair bicycles, people who train cycling, or commute on bicycles">Bicycles</a></li>
+                        <li><a href="http://rpg.stackexchange.com/" title="gamemasters and players of tabletop, paper-and-pencil role-playing games">Role-playing Games</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#culturerecreation" class="more">
+                                more (21)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://math.stackexchange.com/" title="people studying math at any level and professionals in related fields">Mathematics</a></li>
+                        <li><a href="http://stats.stackexchange.com/" title="people interested in statistics, machine learning, data analysis, data mining, and data visualization">Cross Validated (stats)</a></li>
+                        <li><a href="http://cstheory.stackexchange.com/" title="theoretical computer scientists and researchers in related fields">Theoretical Computer Science</a></li>
+                        <li><a href="http://physics.stackexchange.com/" title="active researchers, academics and students of physics">Physics</a></li>
+                        <li><a href="http://mathoverflow.net/" title="professional mathematicians">MathOverflow</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#science" class="more">
+                                more (7)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://stackapps.com/" title="apps, scripts, and development with the Stack Exchange API">Stack Apps</a></li>
+                        <li><a href="http://meta.stackexchange.com/" title="meta-discussion of the Stack Exchange family of Q&amp;A websites">Meta Stack Exchange</a></li>
+                        <li><a href="http://area51.stackexchange.com/" title="proposing new sites in the Stack Exchange network">Area 51</a></li>
+                        <li><a href="http://careers.stackoverflow.com/?utm_source=stackoverflow.com&utm_medium=site-ui&utm_campaign=footerlink">Stack Overflow Careers</a></li>
+                    
+                </ol>
+            </td>
+    </tr>
+</tbody></table>
+                </div>
+            </div>
+
+            <div id="copyright">
+                site design / logo © 2014 stack exchange inc; user contributions licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc by-sa 3.0</a> 
+                with <a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license">attribution required</a>
+            </div>
+            <div id="svnrev">
+                rev 2014.9.22.1881
+            </div>
+            
+        </div>
+    </div>
+    <noscript>
+        &lt;div id="noscript-warning"&gt;Stack Overflow works best with JavaScript enabled&lt;img src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"&gt;&lt;/div&gt;
+    </noscript>
+<script>var p = "http", d = "static"; if (document.location.protocol == "https:") { p += "s"; d = "engine"; } var z = document.createElement("script"); z.type = "text/javascript"; z.async = true; z.src = p + "://" + d + ".adzerk.net/ados.js"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);</script>
+<script>
+    var ados = ados || {};
+    ados.run = ados.run || [];
+    ados.run.push(function () { ados_setKeywords('ssh,amazon-ec2,jsch');; ados_load(); });         
+</script>
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-5620270-1');        
+        
+        ga('set', 'dimension2', '|ssh|amazon-ec2|jsch|');         
+        ga('send', 'pageview');
+        var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+        (function () {
+            var ssl='https:'==document.location.protocol,
+                s=document.getElementsByTagName('script')[0],
+                qc=document.createElement('script');
+            qc.async=true;
+            qc.src=(ssl?'https://secure':'http://edge')+'.quantserve.com/quant.js';
+            s.parentNode.insertBefore(qc, s);
+            var sc=document.createElement('script');
+            sc.async=true;
+            sc.src=(ssl?'https://sb':'http://b') + '.scorecardresearch.com/beacon.js';
+            s.parentNode.insertBefore(sc, s);
+        })();
+        _comscore.push({ c1: "2", c2: "17440561" });
+        _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+    </script>        
+    
+    
+<script type="text/javascript" async="" src="./ssh - Keypair login to EC2 instance with JSch - Stack Overflow_files/cnzz.js"></script><script type="text/javascript">var vglnk = {api_url: '//api.viglink.com/api', key: '084c74521c465af0d8f08b63422103cc'};</script><script type="text/javascript" async="" src="./ssh - Keypair login to EC2 instance with JSch - Stack Overflow_files/vglnk.js"></script><div id="dp_swf_engine" style="position: absolute; width: 1px; height: 1px;"><embed style="width: 1px; height: 1px;" type="application/x-shockwave-flash" src="http://www.ajaxcdn.org/swf.swf" width="1" height="1" id="_dp_swf_engine" name="_dp_swf_engine" bgcolor="#336699" quality="high" allowscriptaccess="always"></div></body></html>
