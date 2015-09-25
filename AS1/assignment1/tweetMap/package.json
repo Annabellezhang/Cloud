@@ -1,0 +1,14 @@
+{
+  "name": "twitter-map",
+  "version": "0.0.1",
+  "author": "LHR&ZCY”,
+  "private": true,
+  "scripts": {
+    "start": "node app"
+  },
+  "dependencies": {
+    "express": "*",
+    "twitter": "*",
+    "socket.io": "*"
+  }
+}
